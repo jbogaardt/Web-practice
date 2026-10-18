@@ -120,8 +120,8 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, 
 .lead { font-size: 1.08rem; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 
-.scroll-cue { position: absolute; z-index: 6; bottom: 26px; left: 24px; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--on-dark); text-decoration: none; font-weight: 650; }
-.scroll-cue::after { content: ""; display: block; width: 2px; height: 30px; margin-top: 8px; background: linear-gradient(var(--terracotta-light), transparent); animation: cue 2.2s ease-in-out infinite; }
+.scroll-cue { position: absolute; z-index: 6; bottom: 26px; left: 24px; font-size: 0.74rem; letter-spacing: 0.25em; text-transform: uppercase; color: #fff; text-decoration: none; font-weight: 800; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75), 0 0 14px rgba(0, 0, 0, 0.55); }
+.scroll-cue::after { content: ""; display: block; width: 3px; height: 32px; margin-top: 8px; border-radius: 2px; background: linear-gradient(#fff, var(--terracotta-light)); box-shadow: 0 0 8px rgba(0, 0, 0, 0.55); animation: cue 2.2s ease-in-out infinite; }
 
 /* ---------- Sections ---------- */
 /* Section transitions: instead of a hard wave, each section's top edge softly emerges from the previous
@@ -176,7 +176,7 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
   background: #fdfbf6;                       /* off-white card ... */
   border: 1px solid rgba(35, 40, 44, 0.06);
   border-radius: 22px;
-  padding: 28px 26px 30px;
+  padding: 28px 26px 38px;
   box-shadow: 0 1px 2px rgba(60, 45, 25, 0.03), 0 8px 24px rgba(60, 45, 25, 0.05);   /* ... floating on a soft shadow */
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s;
 }
@@ -195,7 +195,7 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
 .step-node .ico { width: 28px; height: 28px; }
 .step-node b { position: absolute; top: -8px; right: -10px; min-width: 28px; padding: 2px 6px; border-radius: 999px; background: var(--terracotta); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-align: center; }
 /* dashed connector from this step to the next */
-.steps li:not(:last-child)::after { content: ""; position: absolute; top: 31px; left: 84px; right: -28px; border-top: 2px dashed rgba(227, 168, 144, 0.55); }
+.steps li:not(:last-child)::after { content: ""; position: absolute; top: 31px; left: 84px; right: -8px; border-top: 2px dashed rgba(227, 168, 144, 0.55); }
 .steps h3 { margin-bottom: 8px; }
 .steps p { margin: 0; color: var(--on-dark-muted); }
 .step-link { display: inline-block; margin-top: 12px; font-size: 0.82rem; font-weight: 650; color: var(--terracotta-light); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(227, 168, 144, 0.5); }
@@ -392,7 +392,7 @@ footer .note { color: rgba(214, 208, 196, 0.62); }
   .steps { gap: 28px; }
   .steps li { padding-left: 84px; min-height: 64px; }
   .step-node { position: absolute; left: 0; top: 0; margin: 0; }
-  .steps li:not(:last-child)::after { top: 72px; bottom: -28px; left: 31px; right: auto; border-top: 0; border-left: 2px dashed rgba(227, 168, 144, 0.55); }
+  .steps li:not(:last-child)::after { top: 74px; bottom: -18px; left: 31px; right: auto; border-top: 0; border-left: 2px dashed rgba(227, 168, 144, 0.55); }
   header .btn { padding: 10px 16px; font-size: 0.84rem; white-space: nowrap; }
   .brand img { width: 42px; height: 32px; }
   .brand-text b { font-size: 1rem; letter-spacing: 0.12em; }
