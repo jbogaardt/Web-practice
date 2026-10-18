@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 6 64 49" role="img" aria-label="Wasatch Faux Rock logo">
   <defs>
     <linearGradient id="granite" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0" stop-color="#eef1f2"/>
-      <stop offset="0.5" stop-color="#a9b2b8"/>
-      <stop offset="1" stop-color="#68737a"/>
+      <stop offset="0" stop-color="#f2ece2"/>
+      <stop offset="0.5" stop-color="#b9ac9b"/>
+      <stop offset="1" stop-color="#6c6154"/>
     </linearGradient>
     <linearGradient id="tail" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#b4bcc2"/>
-      <stop offset="1" stop-color="#7b868d"/>
+      <stop offset="0" stop-color="#bdb0a0"/>
+      <stop offset="1" stop-color="#7d7163"/>
     </linearGradient>
     <clipPath id="body">
       <path d="M5 46 C5 44 6 43 7 41 L17 24 L24 34 L31 9 L39 33 L46 22 L52 33 L52 53 L9 53 C6.5 53 5 51.5 5 49 Z"/>
@@ -22,7 +22,7 @@
   <!-- One loaded paint stroke. Its top edge is the Wasatch ridgeline, folded into granite facets. -->
   <g mask="url(#strokeGaps)">
     <path fill="url(#granite)" d="M5 46 C5 44 6 43 7 41 L17 24 L24 34 L31 9 L39 33 L46 22 L52 33 L52 53 L9 53 C6.5 53 5 51.5 5 49 Z"/>
-    <g clip-path="url(#body)" fill="#1f272d">
+    <g clip-path="url(#body)" fill="#1d1712">
       <path opacity="0.30" d="M17 24 L24 34 L24 53 L17 53 Z"/>
       <path opacity="0.34" d="M31 9 L39 33 L39 53 L31 53 Z"/>
       <path opacity="0.30" d="M46 22 L52 33 L52 53 L46 53 Z"/>
