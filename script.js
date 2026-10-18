@@ -108,9 +108,10 @@ if (compare) {
     setPosition(((event.clientX - box.left) / box.width) * 100);
   };
 
-  range.addEventListener("input", () => setPosition(Number(range.value)));
+  range.addEventListener("input", () => { compare.classList.add("touched"); setPosition(Number(range.value)); });
 
   compare.addEventListener("pointerdown", (event) => {
+    compare.classList.add("touched");
     dragging = true;
     compare.setPointerCapture(event.pointerId);
     positionFromPointer(event);
@@ -175,3 +176,11 @@ if (form) {
     }
   });
 }
+
+/* "Add photos (optional)" link: jump to the quote form and put the cursor in the details box. */
+document.querySelectorAll("[data-focus]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const target = document.getElementById(link.dataset.focus);
+    if (target) setTimeout(() => target.focus({ preventScroll: true }), 700);
+  });
+});

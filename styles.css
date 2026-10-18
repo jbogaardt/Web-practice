@@ -144,7 +144,7 @@ section:not(.hero)::before {
 .s-dark, .s-stone { --sil: var(--sil-on-dark); }
 section:not(.hero)::before { -webkit-mask: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); mask: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); }
 #services { --prev: var(--slate-deep); }
-#process  { --prev: var(--stone); }
+#process  { --prev: var(--oatmeal); }
 #work     { --prev: var(--slate-deep); }
 #about    { --prev: var(--stone); }
 #areas    { --prev: var(--moss); }
@@ -189,10 +189,17 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
 .card p { grid-area: text; margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
 /* ---------- Process ---------- */
-.steps { list-style: none; margin: 56px 0 0; padding: 0; display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); counter-reset: step; }
-.steps li { counter-increment: step; border-top: 2px solid var(--terracotta); padding-top: 22px; }
-.steps li::before { content: "0" counter(step); display: block; font-size: 3.2rem; font-weight: 750; letter-spacing: -0.04em; color: var(--terracotta-light); line-height: 1; margin-bottom: 18px; }
+.steps { list-style: none; margin: 56px 0 0; padding: 0; display: grid; gap: 40px 28px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.steps li { position: relative; padding-top: 0; }
+.step-node { position: relative; z-index: 1; display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--slate-deep); border: 2px solid var(--terracotta); color: var(--terracotta-light); margin-bottom: 20px; box-shadow: 0 0 0 6px rgba(180, 83, 60, 0.12); }
+.step-node .ico { width: 28px; height: 28px; }
+.step-node b { position: absolute; top: -8px; right: -10px; min-width: 28px; padding: 2px 6px; border-radius: 999px; background: var(--terracotta); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-align: center; }
+/* dashed connector from this step to the next */
+.steps li:not(:last-child)::after { content: ""; position: absolute; top: 31px; left: 84px; right: -28px; border-top: 2px dashed rgba(227, 168, 144, 0.55); }
+.steps h3 { margin-bottom: 8px; }
 .steps p { margin: 0; color: var(--on-dark-muted); }
+.step-link { display: inline-block; margin-top: 12px; font-size: 0.82rem; font-weight: 650; color: var(--terracotta-light); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(227, 168, 144, 0.5); }
+.step-link:hover { color: #fff; text-decoration-color: currentColor; }
 
 /* ---------- Our work ---------- */
 #work { padding: 110px 0 100px; background: var(--stone); color: var(--slate); }
@@ -231,30 +238,35 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
 }
 .compare-knob {
   position: absolute; top: 50%; left: 50%;
-  width: 46px; height: 46px; margin: -23px 0 0 -23px;
+  width: 58px; height: 58px; margin: -29px 0 0 -29px;
   border-radius: 50%;
-  background: var(--terracotta);
-  border: 3px solid var(--stone);
-  box-shadow: 0 6px 16px rgba(35, 40, 44, 0.35);
+  background: #fff;
+  border: 4px solid var(--terracotta);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.35), 0 8px 22px rgba(0, 0, 0, 0.45);
   transition: transform 0.25s;
 }
 .compare-knob::before, .compare-knob::after {
   content: ""; position: absolute; top: 50%;
-  width: 0; height: 0; border: 6px solid transparent; transform: translateY(-50%);
+  width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; transform: translateY(-50%);
 }
-.compare-knob::before { left: 4px; border-right: 7px solid var(--stone); border-left: 0; }
-.compare-knob::after { right: 4px; border-left: 7px solid var(--stone); border-right: 0; }
-.compare:hover .compare-knob { transform: scale(1.08); }
+.compare-knob::before { left: 7px; border-right: 10px solid var(--slate-deep); }
+.compare-knob::after { right: 7px; border-left: 10px solid var(--slate-deep); }
+.compare:hover .compare-knob { transform: scale(1.1); }
+.compare:not(.touched) .compare-knob { animation: knob-nudge 2.4s ease-in-out infinite; }
+@keyframes knob-nudge { 0%, 100% { transform: translateX(0); } 35% { transform: translateX(-9px); } 70% { transform: translateX(9px); } }
+.compare-hint { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2; padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.92); color: var(--slate-deep); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none; transition: opacity 0.3s; }
+.compare.touched .compare-hint { opacity: 0; }
 .compare-tag {
   position: absolute; top: 14px; z-index: 2;
-  padding: 5px 12px; border-radius: 999px;
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  background: rgba(30, 35, 39, 0.8); color: var(--stone);
+  padding: 6px 14px; border-radius: 999px;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   pointer-events: none;
 }
-.tag-before { left: 14px; }
-.tag-after { right: 14px; }
-.compare .slot-label { position: absolute; left: 0; right: 0; bottom: 16px; padding: 0 12px; }
+.tag-before { left: 14px; background: rgba(30, 35, 39, 0.9); }
+.tag-after { right: 14px; background: var(--terracotta); }
+.compare .slot-label { position: absolute; left: 0; right: 0; top: 30%; padding: 0 12px; }
 .compare-range {
   position: absolute; inset: 0; z-index: 3;
   width: 100%; height: 100%; margin: 0; padding: 0;
@@ -375,6 +387,10 @@ footer .note { color: rgba(214, 208, 196, 0.62); }
 @keyframes cue { 0%, 100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.4; } 50% { transform: scaleY(1); opacity: 1; } }
 
 @media (max-width: 700px) {
+  .steps { gap: 28px; }
+  .steps li { padding-left: 84px; min-height: 64px; }
+  .step-node { position: absolute; left: 0; top: 0; margin: 0; }
+  .steps li:not(:last-child)::after { top: 72px; bottom: -28px; left: 31px; right: auto; border-top: 0; border-left: 2px dashed rgba(227, 168, 144, 0.55); }
   header .btn { padding: 10px 16px; font-size: 0.84rem; white-space: nowrap; }
   .brand img { width: 42px; height: 32px; }
   .brand-text b { font-size: 1rem; letter-spacing: 0.12em; }
