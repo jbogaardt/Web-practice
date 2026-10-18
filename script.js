@@ -88,17 +88,41 @@ if ("IntersectionObserver" in window && !reduceMotion) {
 }
 
 /* ---------- Before and after slider ----------
-   The range input sets --pos on the card, which clips the "before" layer and moves the handle. */
+   Pointer events set the position from the finger or mouse, which works on iPhone. The range
+   input is driven by the keyboard and screen readers and stays in sync with the same value. */
 const compare = document.getElementById("compare");
-const compareRange = compare ? compare.querySelector(".compare-range") : null;
 
-if (compareRange) {
-  const updateCompare = () => {
-    compare.style.setProperty("--pos", `${compareRange.value}%`);
-    compareRange.setAttribute("aria-valuetext", `${compareRange.value}% of the way from before to after`);
+if (compare) {
+  const range = compare.querySelector(".compare-range");
+  let dragging = false;
+
+  const setPosition = (value) => {
+    const clamped = Math.max(0, Math.min(100, Math.round(value)));
+    range.value = clamped;
+    compare.style.setProperty("--pos", `${clamped}%`);
+    range.setAttribute("aria-valuetext", `${clamped}% of the way from before to after`);
   };
-  compareRange.addEventListener("input", updateCompare);
-  updateCompare();
+
+  const positionFromPointer = (event) => {
+    const box = compare.getBoundingClientRect();
+    setPosition(((event.clientX - box.left) / box.width) * 100);
+  };
+
+  range.addEventListener("input", () => setPosition(Number(range.value)));
+
+  compare.addEventListener("pointerdown", (event) => {
+    dragging = true;
+    compare.setPointerCapture(event.pointerId);
+    positionFromPointer(event);
+  });
+  compare.addEventListener("pointermove", (event) => {
+    if (dragging) positionFromPointer(event);
+  });
+  const endDrag = () => { dragging = false; };
+  compare.addEventListener("pointerup", endDrag);
+  compare.addEventListener("pointercancel", endDrag);
+
+  setPosition(Number(range.value));
 }
 
 /* ---------- Quote form ---------- */
