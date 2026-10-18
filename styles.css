@@ -93,7 +93,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, 
   z-index: 3;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(14, 17, 19, 0.8) 0%, rgba(14, 17, 19, 0.4) 50%, rgba(14, 17, 19, 0.05) 100%),
+    linear-gradient(90deg, rgba(14, 17, 19, 0.78) 0%, rgba(14, 17, 19, 0.5) 55%, rgba(14, 17, 19, 0.12) 100%),
     linear-gradient(0deg, rgba(14, 17, 19, 0.55), transparent 42%);
 }
 .layer { position: absolute; left: 0; width: 100%; z-index: 1; will-change: transform; pointer-events: none; }
@@ -179,7 +179,7 @@ section { position: relative; padding: 120px 0; background: var(--speck, none), 
 .s-dark.quote::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 55% at 85% 0%, rgba(120, 160, 185, 0.2), transparent 70%); pointer-events: none; }
 
 /* Granite mountain range: fallback art behind the hero photo (visible until hero.jpg exists). */
-.l-range { bottom: 0; height: 82%; }
+.l-range { bottom: 0; height: 104%; }
 .form-card { margin-top: 34px; max-width: 700px; background: linear-gradient(180deg, #f7f8f7, #e9ebea); border: 1px solid rgba(255,255,255,0.7); color: var(--ink); border-radius: 24px; padding: 32px 28px 28px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); }
 .dev-note { background: #dfe7ec; border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 22px; }
 form { display: grid; gap: 16px; }
