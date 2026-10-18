@@ -102,7 +102,7 @@ if (form) {
     event.preventDefault();
 
     if (!FORM_ENDPOINT) {
-      show("The quote form isn't connected yet (development mode). Please check back soon.", true);
+      show("The quote form is not yet active (development mode). Please check back soon.", true);
       return;
     }
 
@@ -117,9 +117,9 @@ if (form) {
       });
       if (!response.ok) throw new Error("send failed");
       form.reset();
-      show("Thanks! Your request was sent. We'll get back to you soon.", false);
+      show("Thank you. Your request has been received, and we will be in touch shortly.", false);
     } catch (error) {
-      show("Sorry, that didn't send. Please try again in a moment.", true);
+      show("We were unable to send your request. Please try again in a moment.", true);
     } finally {
       button.disabled = false;
     }
