@@ -153,11 +153,23 @@ if (form) {
         headers: { Accept: "application/json" },
         body: new FormData(form),
       });
-      if (!response.ok) throw new Error("send failed");
+      if (!response.ok) {
+        // Pass along Formspree's own explanation (e.g. form not confirmed, domain not allowed).
+        let detail = "";
+        try {
+          const data = await response.json();
+          detail = data.error || (data.errors || []).map((e) => e.message).join(", ");
+        } catch (parseError) { /* response had no JSON body */ }
+        const failure = new Error(`Formspree responded ${response.status}`);
+        failure.detail = detail || `error ${response.status}`;
+        throw failure;
+      }
       form.reset();
       show("Thank you. Your request has been received, and we will be in touch shortly.", false);
     } catch (error) {
-      show("We were unable to send your request. Please try again in a moment.", true);
+      console.error("Quote form error:", error);
+      const detail = error.detail || (error instanceof TypeError ? "the request was blocked or the connection failed" : "");
+      show("We were unable to send your request" + (detail ? ` (${detail})` : "") + ". Please try again in a moment.", true);
     } finally {
       button.disabled = false;
     }
