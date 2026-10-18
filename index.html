@@ -30,18 +30,33 @@
     <main>
       <!-- ================= HERO ================= -->
       <section class="hero" id="top" style="padding:0;">
-        <!-- Faceted granite slabs: fallback art that sits behind the hero photo -->
-        <div class="layer l-slabs" data-speed="0.18" aria-hidden="true">
-          <svg viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice">
+        <!-- Granite mountain range (same folded facets as the logo). Fallback art that sits behind the hero photo. -->
+        <div class="layer l-range" data-speed="0.3" aria-hidden="true">
+          <svg viewBox="0 0 1440 600" preserveAspectRatio="xMaxYMax slice">
             <defs>
-              <linearGradient id="slabA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d989f"/><stop offset="1" stop-color="#2d353a"/></linearGradient>
-              <linearGradient id="slabB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c3ccd1"/><stop offset="1" stop-color="#586369"/></linearGradient>
-              <linearGradient id="slabC" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6c777e"/><stop offset="1" stop-color="#1d2327"/></linearGradient>
+              <linearGradient id="rangeFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d8991"/><stop offset="1" stop-color="#1f2629"/></linearGradient>
+              <linearGradient id="rangeNear" x1="0" y1="0" x2="0.25" y2="1"><stop offset="0" stop-color="#dde4e8"/><stop offset="0.5" stop-color="#8a959c"/><stop offset="1" stop-color="#20272b"/></linearGradient>
             </defs>
-            <path fill="url(#slabC)" opacity="0.85" d="M760 900 L900 380 L1180 250 L1440 330 L1440 900 Z"/>
-            <path fill="url(#slabA)" opacity="0.9" d="M900 380 L1180 250 L1120 560 L860 640 Z"/>
-            <path fill="url(#slabB)" opacity="0.8" d="M1180 250 L1440 330 L1440 560 L1120 560 Z"/>
-            <path fill="#fff" opacity="0.08" d="M900 380 L1180 250 L1440 330 L1200 340 Z"/>
+            <g opacity="0.8">
+              <path fill="url(#rangeFar)" d="M0 600 L0 427 L140 347 L260 400 L420 287 L560 393 L700 313 L860 400 L1020 293 L1200 387 L1440 307 L1440 600 Z"/>
+              <g fill="#0e1316" opacity="0.28">
+                <path d="M140 347 L260 400 L260 600 L140 600 Z"/><path d="M420 287 L560 393 L560 600 L420 600 Z"/>
+                <path d="M700 313 L860 400 L860 600 L700 600 Z"/><path d="M1020 293 L1200 387 L1200 600 L1020 600 Z"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="layer l-range" data-speed="0.16" aria-hidden="true">
+          <svg viewBox="0 0 1440 600" preserveAspectRatio="xMaxYMax slice">
+            <defs>
+              <clipPath id="nearBody"><path d="M520 600 L520 427 L585 392 L600 372 L640 347 L690 385 L720 400 L780 300 L800 312 L840 220 L880 290 L900 282 L960 387 L1010 340 L1060 313 L1120 380 L1170 400 L1215 310 L1260 253 L1300 330 L1320 322 L1360 373 L1400 350 L1440 333 L1440 600 Z"/></clipPath>
+            </defs>
+            <path fill="url(#rangeNear)" d="M520 600 L520 427 L585 392 L600 372 L640 347 L690 385 L720 400 L780 300 L800 312 L840 220 L880 290 L900 282 L960 387 L1010 340 L1060 313 L1120 380 L1170 400 L1215 310 L1260 253 L1300 330 L1320 322 L1360 373 L1400 350 L1440 333 L1440 600 Z"/>
+            <g clip-path="url(#nearBody)" fill="#0e1316" opacity="0.32">
+              <path d="M640 347 L720 400 L720 600 L640 600 Z"/><path d="M840 220 L960 387 L960 600 L840 600 Z"/>
+              <path d="M1060 313 L1170 400 L1170 600 L1060 600 Z"/><path d="M1260 253 L1360 373 L1360 600 L1260 600 Z"/>
+            </g>
+            <path d="M520 427 L585 392 L600 372 L640 347 L690 385 L720 400 L780 300 L800 312 L840 220 L880 290 L900 282 L960 387 L1010 340 L1060 313 L1120 380 L1170 400 L1215 310 L1260 253 L1300 330 L1320 322 L1360 373 L1400 350 L1440 333" fill="none" stroke="#fff" stroke-opacity="0.7" stroke-width="2.2" stroke-linejoin="round"/>
           </svg>
         </div>
 
