@@ -22,7 +22,8 @@
   --on-dark-muted: rgba(217, 212, 203, 0.82);
 
   --radius: 20px;
-  --max: 1120px;
+  --max: 1200px;              /* main container: never wider than this on big monitors */
+  --measure: 68ch;            /* comfortable reading line length for paragraphs */
   --sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --display: Montserrat, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;   /* headings */
 }
@@ -155,6 +156,8 @@ section:not(.hero)::before { -webkit-mask: linear-gradient(180deg, #000 0%, #000
 #areas    { --prev: var(--moss); }
 #quote    { --prev: var(--stone); }
 section:not(.hero) > .wrap { position: relative; z-index: 2; }
+/* No paragraph stretches across a wide monitor (zero specificity, so any explicit max-width still wins) */
+:where(main .wrap p) { max-width: var(--measure); }
 .s-paper { --bg: var(--stone); --fg: var(--ink); }
 .s-sand { --bg: var(--limestone); --fg: var(--ink); }
 .s-dark { --bg: var(--slate-deep); --fg: var(--on-dark); }
@@ -164,7 +167,7 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
 
 .kicker { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--terracotta); margin-bottom: 10px; }
 .s-dark .kicker, .s-stone .kicker { color: var(--terracotta-light); }
-.intro { max-width: 40rem; font-size: 1.05rem; color: var(--muted); }
+.intro { max-width: 40rem; font-size: 1rem; line-height: 1.65; color: var(--muted); }   /* quieter than the 17.9px card titles */
 .s-dark .intro, .s-stone .intro { color: var(--on-dark-muted); }
 
 /* ---------- Services ---------- */
