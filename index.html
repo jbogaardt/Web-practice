@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap">
-    <link rel="stylesheet" href="styles.css?v=1792356291">
+    <link rel="stylesheet" href="styles.css?v=1792356372">
     <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
@@ -134,16 +134,17 @@
             <div class="compare slot" id="compare">
               <span class="slot-label">Before and after photos<br><small>images/before.webp &middot; images/after.webp</small></span>
               <div class="compare-layer compare-after">
-                <div class="slot-img" role="img" aria-label="Faux rock after restoration: even, natural color and sealed finish" data-img="images/after.webp"></div>
+                <div class="slot-img" role="img" aria-label="Seamlessly restored and painted faux rock after repair" data-img="images/after.webp"></div>
               </div>
               <div class="compare-layer compare-before">
-                <div class="slot-img" role="img" aria-label="Faux rock before restoration: faded color and a visible crack" data-img="images/before.webp"></div>
+                <div class="slot-img" role="img" aria-label="Close-up of cracked faux rock before repair" data-img="images/before.webp"></div>
               </div>
               <span class="compare-tag tag-before" aria-hidden="true">Before</span>
               <span class="compare-tag tag-after" aria-hidden="true">After</span>
               <span class="compare-hint" aria-hidden="true">Drag to compare</span>
+              <span class="visually-hidden" id="compare-help">Left arrow reveals more of the before photo, right arrow reveals more of the after photo. Home and End jump to either side.</span>
               <span class="compare-line" aria-hidden="true"><span class="compare-knob"></span></span>
-              <input class="compare-range" type="range" min="0" max="100" value="50" step="1" aria-label="Before and after comparison slider" aria-valuetext="50% of the way from before to after">
+              <input class="compare-range" type="range" min="0" max="100" value="50" step="1" aria-label="Before and after comparison. Use the left and right arrow keys to move the slider." aria-describedby="compare-help" aria-valuetext="Showing half before, half after">
             </div>
             <figcaption>
               <strong>Drag to Compare a&nbsp;Restoration</strong>
@@ -405,6 +406,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=1792356291"></script>
+    <script src="script.js?v=1792356372"></script>
   </body>
 </html>

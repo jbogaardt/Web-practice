@@ -171,7 +171,12 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
 .s-dark .intro, .s-stone .intro { color: var(--on-dark-muted); }
 
 /* ---------- Services ---------- */
-.grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); margin-top: 44px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* Service cards: 1 column on phones, 2 on tablets, 3 on desktop. The container is capped at 1200px, so they never sprawl on ultra-wide screens. */
+.grid { display: grid; gap: 22px; grid-template-columns: 1fr; margin-top: 44px; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .card {
   position: relative;
   display: grid;
@@ -292,7 +297,7 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
 .case-grid {
   display: grid;
   gap: 26px;
-  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  grid-template-columns: 1fr;
   align-items: start;
   margin-top: 64px;
 }
@@ -418,6 +423,9 @@ textarea { min-height: 130px; resize: vertical; }
 .status { margin: 0; font-weight: 650; min-height: 1.4em; }
 .status.ok { color: var(--moss); }
 .status.error { color: var(--terracotta-deep); }
+
+@media (min-width: 700px) { .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .case-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* ---------- Final call to action ---------- */
 .final-cta { padding: 110px 0 120px; background: linear-gradient(135deg, var(--rust) 0%, #5e2618 100%); color: #fff; text-align: center; overflow: hidden; }

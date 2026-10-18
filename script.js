@@ -100,7 +100,7 @@ if (compare) {
     const clamped = Math.max(0, Math.min(100, Math.round(value)));
     range.value = clamped;
     compare.style.setProperty("--pos", `${clamped}%`);
-    range.setAttribute("aria-valuetext", `${clamped}% of the way from before to after`);
+    range.setAttribute("aria-valuetext", clamped === 0 ? "Showing the after photo" : clamped === 100 ? "Showing the before photo" : `Showing ${clamped}% before, ${100 - clamped}% after`);
   };
 
   const positionFromPointer = (event) => {

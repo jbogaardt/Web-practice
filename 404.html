@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#1e2327">
+    <title>Page Not Found | Wasatch Faux Rock</title>
+    <!-- GitHub Pages serves this file for any missing URL, from any folder depth, so every path here is absolute.
+         The site lives at /Web-practice/ today; the script below switches to "/" once a custom domain is used. -->
+    <link rel="icon" type="image/svg+xml" href="/Web-practice/favicon.svg" data-base>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap">
+    <style>
+      :root { --slate-deep: #1e2327; --stone: #f5f3ef; --terracotta: #b4533c; --rust: #8a3a26; --rust-deep: #752f1e; --terracotta-light: #e3a890; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 32px 20px; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; color: #d9d4cb; text-align: center; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(180, 83, 60, 0.16), transparent 70%), var(--slate-deep); -webkit-font-smoothing: antialiased; }
+      main { max-width: 34rem; position: relative; z-index: 1; }
+      .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 40px; color: #f1ede6; text-decoration: none; }
+      .brand svg { width: 50px; height: 38px; }
+      .brand b { display: block; font-family: Montserrat, Inter, sans-serif; font-size: 1.05rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; line-height: 1; text-align: left; }
+      .brand small { display: block; margin-top: 5px; font-size: 0.6rem; letter-spacing: 0.44em; text-transform: uppercase; color: var(--terracotta-light); font-weight: 650; line-height: 1; text-align: left; }
+      .code { font-family: Montserrat, Inter, sans-serif; font-weight: 800; font-size: clamp(5rem, 22vw, 9rem); line-height: 1; letter-spacing: -0.05em; margin: 0; color: rgba(227, 168, 144, 0.22); }
+      h1 { font-family: Montserrat, Inter, sans-serif; font-weight: 800; font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.1; letter-spacing: -0.03em; color: #f1ede6; margin: 8px 0 14px; text-wrap: balance; }
+      p { margin: 0 auto 32px; max-width: 28rem; color: #d9d4cb; text-wrap: pretty; }
+      .btn { display: inline-block; padding: 16px 34px; border-radius: 999px; background: var(--terracotta); border: 1.5px solid var(--terracotta); color: #fff; font: inherit; font-weight: 650; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); transition: transform 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s; }
+      .btn:hover, .btn:focus-visible { background: var(--rust); border-color: var(--rust); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35); outline: 3px solid var(--terracotta-light); outline-offset: 3px; }
+      .btn:active { background: var(--rust-deep); border-color: var(--rust-deep); transform: translateY(0); }
+      .ridge { position: fixed; left: 0; right: 0; bottom: 0; height: 28vh; min-height: 140px; pointer-events: none; opacity: 0.07; }
+      @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="brand" href="/Web-practice/" data-home aria-label="Wasatch Faux Rock, home">
+        <svg viewBox="1 6 64 49" aria-hidden="true"><path fill="#9aa09a" d="M5 46 L17 24 L24 34 L31 9 L39 33 L46 22 L52 33 L52 53 L9 53 C6.5 53 5 51.5 5 49 Z"/><path fill="#eae6df" d="M31 9 L39 33 L31 53 L24 34 Z" opacity=".55"/><rect x="49" y="40" width="14" height="3.4" rx="1.7" fill="#b4533c"/><rect x="49" y="46" width="10" height="3.4" rx="1.7" fill="#b4533c"/></svg>
+        <span><b>Wasatch</b><small>Faux Rock</small></span>
+      </a>
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Looks Like We Hit a Dead&nbsp;End.</h1>
+      <p>The page you are looking for has moved or does not exist. Let us get you back on solid&nbsp;ground.</p>
+      <a class="btn" href="/Web-practice/" data-home>Back to Home</a>
+    </main>
+    <svg class="ridge" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true"><path fill="#f5f3ef" d="M0 160 L0 112 L90 84 L170 104 L270 48 L360 92 L450 70 L560 110 L680 40 L780 88 L880 62 L990 104 L1090 52 L1190 96 L1290 66 L1440 100 L1440 160Z"/></svg>
+    <script>
+      // On a custom domain the site lives at "/" instead of "/Web-practice/".
+      if (!/github\.io$/.test(location.hostname)) {
+        document.querySelectorAll("[data-home]").forEach(function (a) { a.setAttribute("href", "/"); });
+        document.querySelector("[data-base]").setAttribute("href", "/favicon.svg");
+      }
+    </script>
+  </body>
+</html>
