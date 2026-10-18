@@ -84,7 +84,8 @@ nav a:not(.btn):hover { opacity: 1; color: var(--terracotta-light); }
 .btn.ghost:hover, .btn.ghost:focus-visible { background: rgba(245, 243, 239, 0.1); border-color: rgba(245, 243, 239, 0.9); }
 .btn.ghost:active { background: rgba(245, 243, 239, 0.18); }
 /* Secondary action: thin outline only, so it never competes with the primary button */
-.btn.ghost { background: transparent; border: 1px solid rgba(245, 243, 239, 0.55); box-shadow: none; font-weight: 600; }
+/* same padding, border width and weight as the solid button, so both are exactly the same size */
+.btn.ghost { background: transparent; border: 1.5px solid rgba(245, 243, 239, 0.55); box-shadow: none; }
 .btn.ghost:hover { background: rgba(245, 243, 239, 0.08); border-color: rgba(245, 243, 239, 0.9); box-shadow: none; transform: translateY(-1px); }
 a:focus-visible, .btn:focus-visible, button:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
 
@@ -180,7 +181,7 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
   background: #fdfbf6;                       /* off-white card ... */
   border: 1px solid rgba(35, 40, 44, 0.06);
   border-radius: 22px;
-  padding: 28px 26px 38px;
+  padding: 37px 26px 36px;                  /* space above the icon == space below the last line of text */
   box-shadow: 0 1px 2px rgba(60, 45, 25, 0.03), 0 8px 24px rgba(60, 45, 25, 0.05);   /* ... floating on a soft shadow */
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s;
 }
@@ -196,13 +197,13 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
 .steps { list-style: none; margin: 56px 0 0; padding: 0; display: grid; gap: 40px 28px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .steps li { position: relative; padding-top: 0; }
 .step-node { position: relative; z-index: 1; display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--slate-deep); border: 2px solid var(--terracotta); color: var(--terracotta-light); margin-bottom: 20px; box-shadow: 0 0 0 6px rgba(180, 83, 60, 0.12); }
-.step-node .ico { width: 28px; height: 28px; }
+.step-node .ico { width: 24px; height: 24px; }
 .step-node b { position: absolute; top: -8px; right: -10px; min-width: 28px; padding: 2px 6px; border-radius: 999px; background: var(--terracotta); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-align: center; }
 /* dashed connector from this step to the next */
 .steps li:not(:last-child)::after { content: ""; position: absolute; top: 31px; left: 84px; right: -8px; border-top: 2px dashed rgba(227, 168, 144, 0.55); }
 .steps h3 { margin-bottom: 8px; }
 .steps p { margin: 0; color: var(--on-dark-muted); }
-.step-link { display: inline-block; margin-top: 12px; font-size: 0.82rem; font-weight: 650; color: var(--terracotta-light); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(227, 168, 144, 0.5); }
+.step-link { display: inline-block; margin-top: 16px; font-size: 0.82rem; font-weight: 650; color: var(--terracotta-light); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(227, 168, 144, 0.5); }
 .step-link:hover { color: #fff; text-decoration-color: currentColor; }
 
 /* ---------- Our work ---------- */
