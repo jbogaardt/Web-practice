@@ -87,6 +87,20 @@ if ("IntersectionObserver" in window && !reduceMotion) {
   revealEls.forEach((el) => el.classList.add("in"));
 }
 
+/* ---------- Before and after slider ----------
+   The range input sets --pos on the card, which clips the "before" layer and moves the handle. */
+const compare = document.getElementById("compare");
+const compareRange = compare ? compare.querySelector(".compare-range") : null;
+
+if (compareRange) {
+  const updateCompare = () => {
+    compare.style.setProperty("--pos", `${compareRange.value}%`);
+    compareRange.setAttribute("aria-valuetext", `${compareRange.value}% of the way from before to after`);
+  };
+  compareRange.addEventListener("input", updateCompare);
+  updateCompare();
+}
+
 /* ---------- Quote form ---------- */
 const form = document.getElementById("quote-form");
 const status = document.getElementById("quote-status");

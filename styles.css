@@ -154,22 +154,165 @@ section { position: relative; padding: 120px 0; background: var(--bg); color: va
 .steps p { margin: 0; color: var(--on-dark-muted); }
 
 /* ---------- Our work ---------- */
-.work-grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 48px; }
-.work figure { margin: 0; }
 .media { position: relative; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4 / 3; background: var(--sand-edge); box-shadow: 0 2px 4px rgba(30, 16, 7, 0.1), 0 20px 40px rgba(30, 16, 7, 0.2); }
 .media > div { position: absolute; inset: -9% 0; will-change: transform; }
-.work figcaption { margin-top: 16px; }
-.work figcaption strong { display: block; font-size: 1.1rem; letter-spacing: -0.01em; }
-.work figcaption span { color: var(--muted); font-size: 0.95rem; }
-
-.ba { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; margin-top: 44px; max-width: 720px; }
-.ph-note { margin-top: 14px; color: var(--muted); font-size: 0.92rem; }
-
 /* Photo slots: the label shows until the image file exists, then the photo covers it. */
 .slot { display: grid; place-items: center; background: repeating-linear-gradient(45deg, #e2d6b9, #e2d6b9 14px, #ece3cc 14px, #ece3cc 28px); }
 .slot-label { position: relative; text-align: center; padding: 12px; color: var(--muted); font-weight: 650; font-size: 0.92rem; line-height: 1.4; }
 .slot-label small { font-weight: 500; opacity: 0.8; }
 .slot-img { position: absolute; inset: 0; background: var(--img) center / cover no-repeat; }
+
+/* Our Work uses its own earthy palette, scoped to #work so the rest of the site keeps the stain colors. */
+#work {
+  --w-slate: #23282c;
+  --w-slate-deep: #1e2327;
+  --w-stone: #f5f3ef;
+  --w-limestone: #eae6df;
+  --w-limestone-edge: #d6d0c4;
+  --w-card: #fbfaf7;
+  --w-terracotta: #b4533c;
+  --w-moss: #2d4a3e;
+  --w-muted: #5b6268;
+  --w-radius: 14px;
+  padding: 110px 0 100px;
+  background: var(--w-stone);
+  color: var(--w-slate);
+}
+#work h2, #work h3 { color: var(--w-slate); }
+#work .kicker { color: var(--w-terracotta); }
+#work .intro { color: var(--w-muted); }
+#work a:focus-visible, #work button:focus-visible, #work input:focus-visible {
+  outline: 3px solid var(--w-moss);
+  outline-offset: 3px;
+}
+#work .slot { position: relative; display: grid; place-items: center; overflow: hidden; background: repeating-linear-gradient(45deg, #e4dfd4, #e4dfd4 14px, #ece8df 14px, #ece8df 28px); }
+#work .slot-label { position: relative; color: var(--w-muted); }
+#work .compare .slot-label { position: absolute; left: 0; right: 0; bottom: 16px; padding: 0 12px; }
+
+/* Before and after comparison */
+.compare-card { margin: 52px 0 0; }
+#work .compare {
+  --pos: 50%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--w-radius);
+  border: 1px solid var(--w-slate-deep);
+  box-shadow: 0 2px 4px rgba(35, 40, 44, 0.12), 0 24px 48px rgba(35, 40, 44, 0.18);
+  user-select: none;
+}
+#work .compare:focus-within { outline: 3px solid var(--w-moss); outline-offset: 3px; }
+#work .compare-layer { position: absolute; inset: 0; }
+#work .compare-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+#work .compare-line {
+  position: absolute; top: 0; bottom: 0; left: var(--pos);
+  width: 3px; margin-left: -1.5px;
+  background: var(--w-stone);
+  box-shadow: 0 0 0 1px rgba(35, 40, 44, 0.35);
+  pointer-events: none;
+}
+#work .compare-knob {
+  position: absolute; top: 50%; left: 50%;
+  width: 46px; height: 46px; margin: -23px 0 0 -23px;
+  border-radius: 50%;
+  background: var(--w-terracotta);
+  border: 3px solid var(--w-stone);
+  box-shadow: 0 6px 16px rgba(35, 40, 44, 0.35);
+  transition: transform 0.25s;
+}
+#work .compare-knob::before, #work .compare-knob::after {
+  content: ""; position: absolute; top: 50%;
+  width: 0; height: 0; border: 6px solid transparent; transform: translateY(-50%);
+}
+#work .compare-knob::before { left: 4px; border-right: 7px solid var(--w-stone); border-left: 0; }
+#work .compare-knob::after { right: 4px; border-left: 7px solid var(--w-stone); border-right: 0; }
+#work .compare:hover .compare-knob { transform: scale(1.08); }
+#work .compare-tag {
+  position: absolute; top: 14px; z-index: 2;
+  padding: 5px 12px; border-radius: 999px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  background: rgba(30, 35, 39, 0.8); color: var(--w-stone);
+  pointer-events: none;
+}
+#work .tag-before { left: 14px; }
+#work .tag-after { right: 14px; }
+/* The range input covers the frame so the whole card can be dragged or keyed. */
+#work .compare-range {
+  position: absolute; inset: 0; z-index: 3;
+  width: 100%; height: 100%; margin: 0; padding: 0;
+  opacity: 0; cursor: ew-resize;
+  -webkit-appearance: none; appearance: none; background: transparent;
+  touch-action: pan-y;
+}
+#work .compare-range::-webkit-slider-thumb { -webkit-appearance: none; width: 56px; height: 100%; opacity: 0; }
+#work .compare-range::-moz-range-thumb { width: 56px; height: 100%; opacity: 0; border: 0; }
+#work .compare-range::-moz-range-track { background: transparent; }
+.compare-card figcaption { margin-top: 16px; }
+.compare-card figcaption strong { display: block; font-size: 1.1rem; letter-spacing: -0.01em; }
+.compare-card figcaption span { color: var(--w-muted); font-size: 0.95rem; }
+
+/* Case study grid */
+.case-grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  align-items: start;
+  margin-top: 64px;
+}
+#work .case {
+  margin: 0;
+  background: var(--w-card);
+  border: 1px solid var(--w-limestone-edge);
+  border-radius: var(--w-radius);
+  padding: 12px 12px 26px;
+  box-shadow: 0 1px 2px rgba(35, 40, 44, 0.06), 0 12px 26px rgba(35, 40, 44, 0.07);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s, border-color 0.3s;
+}
+#work .case:hover, #work .case:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--w-terracotta);
+  box-shadow: 0 2px 4px rgba(35, 40, 44, 0.08), 0 22px 40px rgba(35, 40, 44, 0.14);
+}
+#work .case-img { border-radius: 10px; }
+#work .case-tall .case-img { aspect-ratio: 4 / 5; }
+#work .case-square .case-img { aspect-ratio: 1 / 1; }
+#work .case-wide .case-img { aspect-ratio: 16 / 10; }
+#work .case-img .slot-img { transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+#work .case:hover .case-img .slot-img, #work .case:focus-within .case-img .slot-img { transform: scale(1.03); }
+#work .case figcaption { padding: 20px 14px 0; }
+#work .case h3 { margin-bottom: 8px; }
+#work .case p { margin: 0; color: var(--w-muted); font-size: 0.97rem; }
+
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.pill {
+  display: inline-block; padding: 5px 12px; border-radius: 999px;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.3;
+  border: 1px solid transparent;
+}
+.pill-type { background: var(--w-slate); color: var(--w-stone); }
+.pill-place { background: transparent; color: var(--w-moss); border-color: var(--w-moss); }
+
+/* Quote banner */
+.cta-card {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+  padding: 28px 32px;
+  background: var(--w-limestone);
+  border: 1px solid var(--w-limestone-edge);
+  border-left: 4px solid var(--w-terracotta);
+  border-radius: var(--w-radius);
+}
+.cta-card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+.cta-card p { margin: 0; color: var(--w-muted); }
+.cta-btn {
+  display: inline-block; padding: 13px 26px; border-radius: 999px;
+  background: var(--w-terracotta); color: #fff;
+  font-weight: 650; font-size: 0.95rem; text-decoration: none;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+}
+.cta-btn:hover { background: #9a4330; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(35, 40, 44, 0.22); }
+.sample-note { margin-top: 36px; font-size: 0.9rem; color: var(--w-muted); }
+@media (prefers-reduced-motion: reduce) {
+  #work .case:hover .case-img .slot-img, #work .case:focus-within .case-img .slot-img { transform: none; }
+}
 
 /* ---------- About ---------- */
 .about { display: grid; gap: 56px; grid-template-columns: 1fr; align-items: center; }
@@ -219,7 +362,9 @@ footer .note { color: rgba(220, 207, 180, 0.62); }
   nav a:not(.btn) { display: none; }
   .hero-content h1 { max-width: none; }
   section { padding: 84px 0; }
-  .ba { grid-template-columns: 1fr; }
+  #work { padding: 84px 0 80px; }
+  .compare { aspect-ratio: 4 / 3; }
+  .cta-card { padding: 24px 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
