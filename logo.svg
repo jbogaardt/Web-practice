@@ -22,7 +22,7 @@
   <!-- One loaded paint stroke. Its top edge is the Wasatch ridgeline, folded into granite facets. -->
   <g mask="url(#strokeGaps)">
     <path fill="url(#granite)" d="M5 46 C5 44 6 43 7 41 L17 24 L24 34 L31 9 L39 33 L46 22 L52 33 L52 53 L9 53 C6.5 53 5 51.5 5 49 Z"/>
-    <g clip-path="url(#body)" fill="#1a1108">
+    <g clip-path="url(#body)" fill="#050302">
       <path opacity="0.30" d="M17 24 L24 34 L24 53 L17 53 Z"/>
       <path opacity="0.34" d="M31 9 L39 33 L39 53 L31 53 Z"/>
       <path opacity="0.30" d="M46 22 L52 33 L52 53 L46 53 Z"/>
