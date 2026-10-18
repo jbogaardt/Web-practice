@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Wasatch Faux Rock logo">
+  <circle cx="32" cy="32" r="30" fill="#f4efe6" stroke="#6b5b4b" stroke-width="2"/>
+  <path d="M10 46 L22 24 L31 36 L40 18 L54 46 Z" fill="#8a7a68"/>
+  <path d="M40 18 L54 46 L44 46 L36 30 Z" fill="#6b5b4b"/>
+  <path d="M22 24 L31 36 L16 46 L10 46 Z" fill="#a89883"/>
+  <path d="M8 50 Q16 45 24 50 T40 50 T56 50 L56 54 Q48 59 40 54 T24 54 T8 54 Z" fill="#6f8a7a"/>
+</svg>

@@ -3,10 +3,199 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello World</title>
+    <title>Wasatch Faux Rock | Faux Rock Repair &amp; Painting in Salt Lake City</title>
+    <meta name="description" content="Faux rock repair, repainting and maintenance for waterfalls, streams, grottos and rockwork in Salt Lake City and surrounding Utah areas. Request a free quote.">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Hello, World!</h1>
-    <p>im happy</p>
+    <header>
+      <div class="wrap bar">
+        <a class="brand" href="#top">
+          <img src="logo.svg" alt="" width="44" height="44">
+          Wasatch Faux Rock
+        </a>
+        <nav aria-label="Main">
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#areas">Service Area</a>
+          <a class="btn" href="#quote">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap">
+          <h1>Faux rock repair, painting and care.</h1>
+          <p class="lead">Waterfalls, streams, grottos and rockwork that look natural year after year. Serving Salt Lake City and the surrounding Wasatch Front.</p>
+          <div class="actions">
+            <a class="btn" href="#quote">Request a Quote</a>
+            <a class="btn ghost" href="#services">See Services</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="wrap">
+          <h2>What we do</h2>
+          <p>If it's faux rock, we can restore it. Every job is different, so we quote each one after hearing about it or seeing it.</p>
+          <div class="grid">
+            <div class="card">
+              <h3>Repair</h3>
+              <p>Cracks, chips, broken edges and failed seams in sculpted concrete, shotcrete and fiberglass rock.</p>
+            </div>
+            <div class="card">
+              <h3>Repainting &amp; recoloring</h3>
+              <p>Faded, stained or peeling rock brought back with layered, natural-looking color.</p>
+            </div>
+            <div class="card">
+              <h3>Sealing &amp; maintenance</h3>
+              <p>Protective sealing and regular upkeep to keep rockwork looking good through Utah sun, freeze and thaw.</p>
+            </div>
+            <div class="card">
+              <h3>Waterfalls &amp; streams</h3>
+              <p>Leaks, water stains, mineral buildup and tired finishes on faux rock water features.</p>
+            </div>
+            <div class="card">
+              <h3>Grottos &amp; pools</h3>
+              <p>Rockwork around pools, ponds and grottos, including touch-ups and full refinishing.</p>
+            </div>
+            <div class="card">
+              <h3>Anything faux rock</h3>
+              <p>Walls, planters, boulders and commercial or themed rock. Not sure? Ask.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="process">
+        <div class="wrap">
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li><h3>Tell us about it</h3><p>Send a quote request with a few details and photos if you have them.</p></li>
+            <li><h3>We assess the job</h3><p>We review the rockwork, usually on site, and talk through what it needs.</p></li>
+            <li><h3>Clear quote</h3><p>You get a quote based on your job site. No pressure.</p></li>
+            <li><h3>Restored</h3><p>We repair, paint and finish it so it blends in naturally.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="wrap gallery">
+          <h2>Gallery</h2>
+          <p>Project photos are coming soon.</p>
+          <div class="grid">
+            <figure>
+              <div class="ba">
+                <div class="ph">Before photo</div>
+                <div class="ph">After photo</div>
+              </div>
+              <figcaption>Waterfall repair and repaint</figcaption>
+            </figure>
+            <figure>
+              <div class="ba">
+                <div class="ph">Before photo</div>
+                <div class="ph">After photo</div>
+              </div>
+              <figcaption>Stream and grotto refinish</figcaption>
+            </figure>
+            <figure>
+              <div class="ph">Project photo</div>
+              <figcaption>Rockwork maintenance</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="about">
+        <div class="wrap">
+          <h2>About</h2>
+          <p>Wasatch Faux Rock is a new, locally run business built on hands-on experience maintaining and repairing the faux rock and water features in my own backyard. I know how these features age in Utah's climate and what it takes to make repairs disappear.</p>
+          <p>I'm taking on projects of all sizes, residential and commercial, and I'm happy to talk through whatever you've got.</p>
+        </div>
+      </section>
+
+      <section id="areas">
+        <div class="wrap">
+          <h2>Service area</h2>
+          <p>Based in Salt Lake City and serving the surrounding areas, including:</p>
+          <ul class="areas">
+            <li>Salt Lake City</li>
+            <li>Millcreek</li>
+            <li>Holladay</li>
+            <li>Cottonwood Heights</li>
+            <li>Murray</li>
+            <li>Sandy</li>
+            <li>Draper</li>
+            <li>South Jordan</li>
+            <li>West Jordan</li>
+            <li>Taylorsville</li>
+            <li>Bountiful</li>
+            <li>Park City</li>
+          </ul>
+          <p class="note">Somewhere else nearby? Send a request anyway.</p>
+        </div>
+      </section>
+
+      <section class="alt" id="quote">
+        <div class="wrap">
+          <h2>Request a quote</h2>
+          <p>Tell us about your rockwork. Pricing depends on the job site, so every quote is custom.</p>
+          <div class="dev-note">Development mode: the phone number and email on this site are placeholders.</div>
+          <form id="quote-form" action="mailto:quotes@example.com" method="post" enctype="text/plain">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="city">City</label>
+                <input id="city" name="city" type="text" placeholder="e.g. Sandy" required>
+              </div>
+            </div>
+            <div>
+              <label for="type">Project type</label>
+              <select id="type" name="type" required>
+                <option value="">Select one</option>
+                <option>Repair</option>
+                <option>Repainting / recoloring</option>
+                <option>Sealing / maintenance</option>
+                <option>Waterfall or stream</option>
+                <option>Grotto or pool rockwork</option>
+                <option>Other faux rock</option>
+              </select>
+            </div>
+            <div>
+              <label for="details">Tell us about the job</label>
+              <textarea id="details" name="details" required></textarea>
+            </div>
+            <p class="note">After you send this, reply to the email with any photos of the rockwork. They help a lot.</p>
+            <div><button class="btn" type="submit">Send Quote Request</button></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p><strong>Wasatch Faux Rock</strong> &middot; Salt Lake City, UT &amp; surrounding areas</p>
+        <p>Phone: <a href="tel:+18015550100">(801) 555-0100</a> &middot; Email: <a href="mailto:quotes@example.com">quotes@example.com</a></p>
+        <p class="note" style="color: var(--sand-dark);">&copy; Wasatch Faux Rock. Placeholder contact info during development.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
