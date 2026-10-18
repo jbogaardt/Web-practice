@@ -1,7 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Wasatch Faux Rock logo">
-  <circle cx="32" cy="32" r="30" fill="#f4efe6" stroke="#6b5b4b" stroke-width="2"/>
-  <path d="M10 46 L22 24 L31 36 L40 18 L54 46 Z" fill="#8a7a68"/>
-  <path d="M40 18 L54 46 L44 46 L36 30 Z" fill="#6b5b4b"/>
-  <path d="M22 24 L31 36 L16 46 L10 46 Z" fill="#a89883"/>
-  <path d="M8 50 Q16 45 24 50 T40 50 T56 50 L56 54 Q48 59 40 54 T24 54 T8 54 Z" fill="#6f8a7a"/>
+  <defs>
+    <!-- The left half of the W is cut out of the stone like an open crack -->
+    <mask id="crack" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+      <rect width="64" height="64" fill="#fff"/>
+      <path d="M15 25 L24 45 L32 29" fill="none" stroke="#000" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <g mask="url(#crack)">
+    <path fill="#8b7e6f" d="M6 38 L12 18 L27 6 L46 8 L58 24 L57 47 L41 59 L20 57 Z"/>
+    <path fill="#aa9c89" d="M12 18 L27 6 L46 8 L33 24 Z"/>
+    <path fill="#6c6155" d="M46 8 L58 24 L57 47 L44 36 Z"/>
+    <path fill="#756a5d" d="M6 38 L20 57 L41 59 L30 44 Z"/>
+  </g>
+  <!-- The right half of the W is the repair: the same crack, filled in -->
+  <path d="M32 29 L40 45 L49 25" fill="none" stroke="#c2693a" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>
