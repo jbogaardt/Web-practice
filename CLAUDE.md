@@ -8,16 +8,16 @@ The site is static HTML/CSS/JS at the repo root: `index.html`, `styles.css`, `sc
 
 ## Style
 
-Smooth, modern parallax with a hint of a giant tree of life / jungle treehouse: natural, neutral, professional, earth-toned with forest greens, warm gold and a soft teal glow. Colors are CSS variables at the top of `styles.css`. Pricing is never shown; every job is "request a quote".
+Modern, professional, smooth parallax. Natural earth tones: warm stone neutrals, charcoal, clay and a gold accent. Colors are CSS variables at the top of `styles.css`. Pricing is never shown; every job is "request a quote". No fantasy, jungle, treehouse or Disney theming, and no trademarked names, characters or art.
 
-- The hero is a layered parallax scene built from inline SVG (mountains, faux rock cliff with waterfall, giant tree with treehouse, hanging vines, foreground leaves). Layer speeds are the `data-speed` attributes; `script.js` moves them on scroll. Vines and fireflies are generated in `script.js`.
-- Below the hero, sections have wavy dividers, scroll-reveal (`.reveal`), and wood-and-parchment cards. Gallery placeholders are hanging wooden frames.
-- Everything must respect `prefers-reduced-motion` (parallax, animation and reveal are disabled). Don't use any Disney or other trademarked names, characters or art on the site.
+- The site should show hard, skilled labor: men at work repairing, painting and sealing faux rock. With no real photos yet, these are original SVG illustrations. Shared figures (`sym-paint`, `sym-kneel`, `sym-spray`) and scenes (`scene-paint`, `scene-crack`, `scene-seal`) are defined once in the hidden `<svg>` at the top of `index.html` and reused with `<use>`. Replace them with real photos when available.
+- The hero is a layered parallax scene (mountains, a faux rock waterfall half repainted, two workers). Layer speeds are the `data-speed` attributes. `script.js` eases the scroll position each frame so motion is smooth, and also drifts images inside `.media` frames (`data-drift`).
+- Sections use clean straight edges, scroll-reveal (`.reveal`) and light cards. Everything must respect `prefers-reduced-motion` (parallax, animation and reveal are disabled).
 
 ## Placeholders to replace before launch
 
 - Phone `(801) 555-0100` and email `quotes@example.com` are fake. They appear in `index.html` (footer and form `action`) and in `script.js` (`QUOTE_EMAIL`). Remove the "Development mode" notice in the quote section and the footer note when real details are in.
-- Gallery photos are dashed `.ph` placeholders in `index.html`. Put real photos in `images/` and replace each `.ph` div with an `<img>` with descriptive alt text.
+- The "Our work" scenes are illustrations and the before/after boxes are dashed `.ph` placeholders in `index.html`. Put real photos in `images/` and swap them in with descriptive alt text.
 - The About section avoids credentials the business doesn't have yet (no licensed/insured/years claims). Only add credibility claims the owner confirms.
 - The quote form posts to a hosted form endpoint set in `FORM_ENDPOINT` in `script.js` (empty until the owner creates one, e.g. a Formspree form). The owner's real inbox address must never appear in the site files, so the endpoint URL (not an email) is what goes in the code. The footer email `quotes@example.com` is still a placeholder.
 

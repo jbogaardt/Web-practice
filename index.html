@@ -5,21 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wasatch Faux Rock | Faux Rock Repair &amp; Painting in Salt Lake City</title>
     <meta name="description" content="Faux rock repair, repainting and maintenance for waterfalls, streams, grottos and rockwork in Salt Lake City and surrounding Utah areas. Request a free quote.">
-    <meta name="theme-color" content="#1f3a2e">
+    <meta name="theme-color" content="#1c1a18">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <link rel="stylesheet" href="styles.css">
     <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
+    <!-- Shared illustration parts (original artwork) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <!-- Hero rock mass. Tone comes from the `color` of the <use>. -->
+        <g id="rockA">
+          <path fill="currentColor" d="M120 650 C100 520 150 420 230 360 C300 300 330 220 420 170 C520 110 650 120 740 170 C830 220 900 300 930 400 C960 500 950 580 940 650 Z"/>
+          <g fill="#fff" opacity=".14"><ellipse cx="300" cy="430" rx="95" ry="62"/><ellipse cx="520" cy="250" rx="115" ry="70"/><ellipse cx="770" cy="330" rx="105" ry="90"/><ellipse cx="640" cy="470" rx="90" ry="60"/></g>
+          <g fill="#000" opacity=".2"><ellipse cx="430" cy="570" rx="130" ry="72"/><ellipse cx="850" cy="530" rx="95" ry="105"/><ellipse cx="220" cy="600" rx="80" ry="60"/></g>
+          <g fill="none" stroke="#000" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"><path d="M210 480 C260 440 300 470 340 430"/><path d="M420 330 C480 360 520 330 580 370"/><path d="M700 260 C740 300 790 280 840 330"/><path d="M360 600 C430 570 480 600 540 575"/><path d="M820 470 C860 500 900 480 930 520"/></g>
+        </g>
+
+        <!-- Full-frame rock wall texture for the work scenes -->
+        <g id="wallTex">
+          <rect width="600" height="450" fill="currentColor"/>
+          <g fill="#fff" opacity=".13"><ellipse cx="90" cy="90" rx="110" ry="70"/><ellipse cx="320" cy="60" rx="120" ry="60"/><ellipse cx="520" cy="130" rx="110" ry="80"/><ellipse cx="200" cy="260" rx="130" ry="80"/><ellipse cx="450" cy="300" rx="120" ry="80"/></g>
+          <g fill="#000" opacity=".16"><ellipse cx="220" cy="140" rx="90" ry="40"/><ellipse cx="410" cy="190" rx="100" ry="50"/><ellipse cx="90" cy="330" rx="100" ry="60"/><ellipse cx="540" cy="400" rx="110" ry="60"/></g>
+          <g fill="none" stroke="#000" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"><path d="M0 150 C80 120 140 170 230 140 S380 100 470 150 S560 170 600 140"/><path d="M0 300 C90 270 170 320 270 290 S430 260 520 310 S580 320 600 300"/><path d="M130 0 C150 60 120 100 150 160"/><path d="M400 0 C380 70 420 110 400 170"/><path d="M300 300 C290 350 320 390 300 450"/></g>
+        </g>
+
+        <!-- Worker: standing, painting, brush raised to the right -->
+        <symbol id="sym-paint" viewBox="0 0 150 250">
+          <path d="M46 132 L68 132 L64 236 L42 236Z" fill="#33414f"/>
+          <path d="M70 132 L92 132 L104 236 L82 236Z" fill="#3d4d5e"/>
+          <path d="M36 234 H66 V247 H32Z M80 234 H110 V247 H78Z" fill="#2b241e"/>
+          <path d="M48 84 L36 126" class="shirt-s" stroke-width="13" stroke-linecap="round" fill="none"/>
+          <circle cx="35" cy="130" r="7" class="skin"/>
+          <path d="M44 78 Q69 68 94 78 L96 138 L44 138Z" class="shirt"/>
+          <rect x="44" y="102" width="52" height="5" fill="#f3e9a8" opacity=".85"/>
+          <rect x="44" y="132" width="52" height="7" fill="#2b241e"/>
+          <rect x="64" y="64" width="11" height="12" class="skin"/>
+          <circle cx="70" cy="50" r="17" class="skin"/>
+          <path d="M52 48 Q54 26 72 26 Q90 28 90 48Z" fill="#e7b92c"/>
+          <rect x="50" y="46" width="50" height="6" rx="3" fill="#e7b92c"/>
+          <path d="M92 84 L122 58" class="shirt-s" stroke-width="13" stroke-linecap="round" fill="none"/>
+          <circle cx="124" cy="54" r="7" class="skin"/>
+          <path d="M124 54 L136 28" stroke="#8a6a3f" stroke-width="5" stroke-linecap="round"/>
+          <path d="M131 30 L143 24 L146 12 L134 16Z" class="paint"/>
+        </symbol>
+
+        <!-- Worker: kneeling, troweling toward the right -->
+        <symbol id="sym-kneel" viewBox="0 0 190 160">
+          <path d="M60 84 L74 132" stroke="#33414f" stroke-width="20" stroke-linecap="round" fill="none"/>
+          <path d="M74 132 L22 140" stroke="#33414f" stroke-width="17" stroke-linecap="round" fill="none"/>
+          <ellipse cx="16" cy="142" rx="10" ry="7" fill="#2b241e"/>
+          <path d="M62 84 L112 100" stroke="#3d4d5e" stroke-width="20" stroke-linecap="round" fill="none"/>
+          <path d="M112 100 L116 142" stroke="#3d4d5e" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <ellipse cx="120" cy="148" rx="14" ry="7" fill="#2b241e"/>
+          <path d="M44 88 L80 92 L122 50 L96 30Z" class="shirt"/>
+          <circle cx="110" cy="28" r="15" class="skin"/>
+          <path d="M96 24 Q100 8 114 8 Q128 10 126 26Z" fill="#e7b92c"/>
+          <rect x="94" y="23" width="40" height="5" rx="2.5" fill="#e7b92c"/>
+          <path d="M110 52 L146 88" class="shirt-s" stroke-width="12" stroke-linecap="round" fill="none"/>
+          <circle cx="148" cy="90" r="7" class="skin"/>
+          <path d="M148 90 L166 98" stroke="#666" stroke-width="4" stroke-linecap="round"/>
+          <path d="M164 92 L184 102 L166 106Z" fill="#c2c7cc"/>
+        </symbol>
+
+        <!-- Worker: standing with a backpack sprayer -->
+        <symbol id="sym-spray" viewBox="0 0 175 250">
+          <path d="M48 132 L70 132 L68 236 L46 236Z" fill="#33414f"/>
+          <path d="M72 132 L94 132 L98 236 L76 236Z" fill="#3d4d5e"/>
+          <path d="M40 234 H70 V247 H36Z M74 234 H106 V247 H72Z" fill="#2b241e"/>
+          <rect x="22" y="78" width="28" height="58" rx="9" fill="#2f6f8f"/>
+          <rect x="28" y="70" width="16" height="10" rx="3" fill="#25586f"/>
+          <path d="M50 86 L42 128" class="shirt-s" stroke-width="13" stroke-linecap="round" fill="none"/>
+          <circle cx="41" cy="132" r="7" class="skin"/>
+          <path d="M46 78 Q71 68 96 78 L98 138 L46 138Z" class="shirt"/>
+          <rect x="46" y="102" width="52" height="5" fill="#f3e9a8" opacity=".85"/>
+          <rect x="46" y="132" width="52" height="7" fill="#2b241e"/>
+          <rect x="66" y="64" width="11" height="12" class="skin"/>
+          <circle cx="72" cy="50" r="17" class="skin"/>
+          <path d="M54 48 Q56 26 74 26 Q92 28 92 48Z" fill="#e7b92c"/>
+          <rect x="52" y="46" width="50" height="6" rx="3" fill="#e7b92c"/>
+          <path d="M48 104 C58 160 100 150 120 114" stroke="#222" stroke-width="3" fill="none"/>
+          <path d="M94 88 L124 108" class="shirt-s" stroke-width="13" stroke-linecap="round" fill="none"/>
+          <circle cx="126" cy="110" r="7" class="skin"/>
+          <path d="M126 110 L158 118" stroke="#444" stroke-width="4" stroke-linecap="round"/>
+          <g fill="#bfe3f0" opacity=".85"><circle cx="164" cy="120" r="2.2"/><circle cx="168" cy="126" r="2.2"/><circle cx="166" cy="114" r="2.2"/><circle cx="172" cy="122" r="2.2"/></g>
+        </symbol>
+
+        <symbol id="sym-bucket" viewBox="0 0 50 50">
+          <path d="M6 14 L44 14 L40 46 L10 46Z" fill="#b9b2a2"/>
+          <ellipse cx="25" cy="14" rx="19" ry="5" class="paint"/>
+          <path d="M8 14 C8 -2 42 -2 42 14" stroke="#555" stroke-width="2" fill="none"/>
+          <rect x="8" y="27" width="34" height="8" fill="#c2693a" opacity=".9"/>
+        </symbol>
+
+        <!-- Work scene 1: repainting a rock wall (left raw, right finished) -->
+        <symbol id="scene-paint" viewBox="0 0 600 450">
+          <clipPath id="cPaint"><path d="M450 0 L600 0 L600 450 L400 450 C430 340 410 220 450 0Z"/></clipPath>
+          <use href="#wallTex" style="color:#8a8983"/>
+          <g clip-path="url(#cPaint)">
+            <use href="#wallTex" style="color:#a9794c"/>
+            <path d="M0 120 H600 M0 235 H600 M0 340 H600" stroke="#6b4a2b" stroke-opacity=".25" stroke-width="14"/>
+          </g>
+          <rect y="400" width="600" height="50" fill="#5f564b"/>
+          <path d="M20 408 L380 408 L400 442 L0 442Z" fill="#d8d1c2"/>
+          <use href="#sym-bucket" x="248" y="366" width="52" height="52" style="--paint:#a9794c"/>
+          <use href="#sym-paint" x="282" y="141" width="162" height="270" style="--shirt:#6b7a4a; --skin:#d9a47c; --paint:#a9794c"/>
+        </symbol>
+
+        <!-- Work scene 2: repairing a crack -->
+        <symbol id="scene-crack" viewBox="0 0 600 450">
+          <use href="#wallTex" style="color:#8c8a82"/>
+          <rect y="400" width="600" height="50" fill="#5f564b"/>
+          <path d="M470 110 L486 190 L468 250 L492 310" stroke="#2a241e" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M492 304 L480 402" stroke="#bdb09a" stroke-width="16" stroke-linecap="round"/>
+          <g fill="#d9d0bd" opacity=".8"><circle cx="520" cy="340" r="3"/><circle cx="534" cy="352" r="2"/><circle cx="508" cy="372" r="2.5"/></g>
+          <use href="#sym-bucket" x="70" y="360" width="58" height="58" style="--paint:#9a9488"/>
+          <use href="#sym-kneel" x="173" y="157" width="323" height="272" style="--shirt:#b86f3f; --skin:#b98260"/>
+        </symbol>
+
+        <!-- Work scene 3: sealing a waterfall -->
+        <symbol id="scene-seal" viewBox="0 0 600 450">
+          <clipPath id="cSeal"><path d="M270 450 L270 210 C310 130 380 104 450 112 C540 122 600 150 600 200 L600 450Z"/></clipPath>
+          <rect width="600" height="450" fill="#a9b9bc"/>
+          <g clip-path="url(#cSeal)"><use href="#wallTex" style="color:#86806f"/>
+            <path d="M300 230 L430 160 L440 214 L312 290Z" fill="#fff" opacity=".2"/>
+          </g>
+          <path d="M470 112 C466 200 476 260 466 350 L522 350 C512 260 524 200 518 114Z" fill="#d4f0f1" opacity=".92"/>
+          <path class="flow" d="M486 116 C484 200 492 260 486 350 M502 116 C502 200 508 260 502 350" stroke="#fff" stroke-width="3" fill="none" opacity=".8"/>
+          <ellipse cx="460" cy="402" rx="190" ry="36" fill="#6fa8a8"/>
+          <path d="M0 400 L280 400 L280 450 L0 450Z" fill="#6b5f52"/>
+          <ellipse cx="318" cy="290" rx="56" ry="28" fill="#cfeaf2" opacity=".35"/>
+          <use href="#sym-spray" x="114" y="141" width="189" height="270" style="--shirt:#4d6b78; --skin:#e0b08a"/>
+        </symbol>
+      </defs>
+    </svg>
+
     <header id="site-header">
       <div class="wrap bar">
         <a class="brand" href="#top">
-          <img src="logo.svg" alt="" width="44" height="44">
+          <img src="logo.svg" alt="" width="42" height="42">
           Wasatch Faux Rock
         </a>
         <nav aria-label="Main">
           <a href="#services">Services</a>
-          <a href="#gallery">Gallery</a>
+          <a href="#work">Our Work</a>
           <a href="#about">About</a>
           <a href="#areas">Service Area</a>
           <a class="btn" href="#quote">Get a Quote</a>
@@ -28,150 +157,57 @@
     </header>
 
     <main>
-      <!-- ================= HERO: layered parallax scene ================= -->
+      <!-- ================= HERO ================= -->
       <section class="hero" id="top" style="padding:0;">
-        <!-- far mountains -->
-        <div class="layer l-far" data-speed="0.38" aria-hidden="true">
+        <div class="layer l-far" data-speed="0.42" aria-hidden="true">
           <svg viewBox="0 0 1440 400" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="gFar" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#5a9c8e"/><stop offset="1" stop-color="#2f6a63"/>
-              </linearGradient>
-            </defs>
-            <path fill="url(#gFar)" d="M0 400 L0 250 L120 180 L210 230 L330 120 L430 210 L520 160 L640 240 L760 150 L880 230 L1000 110 L1120 200 L1240 140 L1340 210 L1440 170 L1440 400 Z"/>
-            <path fill="#e9f5ee" opacity="0.55" d="M330 120 L300 160 L325 150 L345 170 L360 148 Z M1000 110 L965 158 L992 146 L1012 168 L1030 142 Z"/>
+            <defs><linearGradient id="gFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a9aa1"/><stop offset="1" stop-color="#5c6d74"/></linearGradient></defs>
+            <path fill="url(#gFar)" opacity="0.85" d="M0 400 L0 250 L120 180 L210 230 L330 120 L430 210 L520 160 L640 240 L760 150 L880 230 L1000 110 L1120 200 L1240 140 L1340 210 L1440 170 L1440 400 Z"/>
           </svg>
         </div>
-
-        <!-- near hills -->
-        <div class="layer l-near" data-speed="0.26" aria-hidden="true">
+        <div class="layer l-near" data-speed="0.28" aria-hidden="true">
           <svg viewBox="0 0 1440 400" preserveAspectRatio="none">
-            <path fill="#24564a" d="M0 400 L0 260 C160 200 260 270 400 230 C560 180 640 250 800 220 C960 190 1100 260 1250 215 C1340 190 1400 210 1440 200 L1440 400 Z"/>
+            <path fill="#3b484e" d="M0 400 L0 260 C160 200 260 270 400 230 C560 180 640 250 800 220 C960 190 1100 260 1250 215 C1340 190 1400 210 1440 200 L1440 400 Z"/>
           </svg>
         </div>
 
-        <!-- faux rock cliff with waterfall -->
-        <div class="layer l-cliff" data-speed="0.16" aria-hidden="true">
-          <svg viewBox="0 0 600 700" preserveAspectRatio="xMidYMax meet">
+        <!-- faux rock waterfall being repainted and repaired -->
+        <div class="layer l-scene" data-speed="0.12" aria-hidden="true">
+          <svg viewBox="0 0 1000 720" preserveAspectRatio="xMaxYMax meet">
             <defs>
-              <linearGradient id="gFall" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#e8fff8" stop-opacity="0.95"/>
-                <stop offset="1" stop-color="#8fe3d2" stop-opacity="0.8"/>
-              </linearGradient>
-              <radialGradient id="gMist" cx="50%" cy="50%" r="50%">
-                <stop offset="0" stop-color="#e8fff8" stop-opacity="0.85"/>
-                <stop offset="1" stop-color="#e8fff8" stop-opacity="0"/>
-              </radialGradient>
+              <clipPath id="cHero"><path d="M440 100 L1000 100 L1000 700 L330 700 C360 560 390 330 440 100Z"/></clipPath>
+              <linearGradient id="gFall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eefcfb" stop-opacity="0.95"/><stop offset="1" stop-color="#9ee0d6" stop-opacity="0.85"/></linearGradient>
             </defs>
-            <path fill="#5e4e3f" d="M0 700 L0 330 C20 290 70 300 90 260 C120 200 190 210 220 170 C260 120 330 130 360 100 C400 70 470 90 500 130 C540 180 600 170 600 240 L600 700 Z"/>
-            <path fill="#7b6755" d="M0 700 L0 400 C40 360 90 380 130 340 C170 300 230 320 270 280 C300 250 310 330 300 420 L300 700 Z"/>
-            <path fill="#8d785f" opacity="0.7" d="M400 700 L400 330 C430 300 480 310 520 280 C560 250 600 270 600 300 L600 700 Z"/>
-            <path d="M80 330 L110 420 L90 500 M200 250 L230 340 L210 420 M470 190 L500 270 L480 360 M520 380 L540 470" stroke="#3d3025" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
-            <path d="M120 600 q30 -30 70 -10 M440 560 q30 -26 60 -6 M40 480 q26 -20 56 -4" stroke="#a48c6e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
-            <path fill="url(#gFall)" d="M350 108 C340 220 352 330 338 440 C330 520 340 580 332 640 L410 640 C400 560 412 500 405 430 C398 330 410 220 398 112 Z"/>
-            <path class="flow" d="M360 112 C356 240 366 340 354 460 M376 112 C374 240 384 340 372 460 M392 116 C392 240 400 340 392 460" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
-            <ellipse cx="370" cy="645" rx="170" ry="30" fill="#6fd3c4" opacity="0.55"/>
-            <ellipse cx="370" cy="640" rx="120" ry="46" fill="url(#gMist)"/>
+            <use href="#rockA" style="color:#8b8a84"/>
+            <g clip-path="url(#cHero)">
+              <use href="#rockA" style="color:#a67c52"/>
+              <path d="M300 250 H1000 M300 400 H1000 M300 540 H1000" stroke="#6b4a2b" stroke-opacity=".22" stroke-width="22"/>
+            </g>
+            <path d="M0 720 L0 646 C250 630 500 656 1000 640 L1000 720 Z" fill="#403a33"/>
+            <path fill="url(#gFall)" d="M575 140 C570 280 585 420 568 560 L560 646 L650 646 L640 560 C628 420 640 280 628 142 Z"/>
+            <path class="flow" d="M590 146 C586 280 598 420 584 560 M606 146 C604 280 614 420 604 560 M620 148 C620 280 626 420 620 560" stroke="#fff" stroke-width="3" fill="none" opacity="0.7"/>
+            <ellipse cx="600" cy="652" rx="230" ry="26" fill="#6ea9a8" opacity="0.9"/>
+            <ellipse cx="600" cy="652" rx="150" ry="14" fill="none" stroke="#fff" stroke-opacity="0.4" stroke-width="2"/>
+            <use href="#sym-bucket" x="190" y="602" width="46" height="46" style="--paint:#a67c52"/>
+            <use href="#sym-paint" x="235" y="410" width="143" height="238" style="--shirt:#6b7a4a; --skin:#d9a47c; --paint:#a67c52"/>
+            <use href="#sym-kneel" x="740" y="495" width="190" height="160" style="--shirt:#b86f3f; --skin:#b98260"/>
           </svg>
         </div>
 
-        <!-- giant tree with treehouse -->
-        <div class="layer l-tree" data-speed="0.1" aria-hidden="true">
-          <svg viewBox="0 0 800 900" preserveAspectRatio="xMaxYMax meet">
-            <defs>
-              <radialGradient id="gLeaf" cx="40%" cy="30%" r="75%">
-                <stop offset="0" stop-color="#6fb065"/><stop offset="1" stop-color="#27583a"/>
-              </radialGradient>
-              <filter id="fGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <!-- roots -->
-            <g fill="none" stroke="#3a281c" stroke-linecap="round">
-              <path d="M380 880 C300 870 240 890 140 900" stroke-width="38"/>
-              <path d="M420 880 C500 870 570 890 670 900" stroke-width="38"/>
-              <path d="M370 860 C330 820 250 830 190 795" stroke-width="24"/>
-              <path d="M430 860 C480 820 560 830 620 795" stroke-width="24"/>
-            </g>
-            <!-- trunk and branches -->
-            <path fill="#3a281c" d="M322 900 C358 830 366 770 368 690 L432 690 C434 770 444 830 484 900 Z"/>
-            <g fill="none" stroke="#3a281c" stroke-linecap="round">
-              <path d="M400 900 C395 760 405 640 400 520" stroke-width="112"/>
-              <path d="M400 540 C380 450 300 400 230 330" stroke-width="58"/>
-              <path d="M400 540 C430 440 520 390 600 320" stroke-width="58"/>
-              <path d="M400 520 C400 420 395 340 400 250" stroke-width="60"/>
-              <path d="M300 400 C250 380 200 380 150 340" stroke-width="28"/>
-              <path d="M520 380 C580 370 640 360 690 310" stroke-width="28"/>
-            </g>
-            <!-- bark highlights and glowing veins -->
-            <g fill="none" stroke-linecap="round">
-              <path d="M372 880 C372 760 384 640 376 520" stroke="#5a4130" stroke-width="10" opacity="0.7"/>
-              <path d="M430 880 C432 760 422 650 428 540" stroke="#2a1c13" stroke-width="12" opacity="0.6"/>
-              <g filter="url(#fGlow)" stroke="#8ff0d0" stroke-width="2.5">
-                <path class="twinkle" d="M398 880 C392 780 406 680 398 560 C394 500 380 450 332 392"/>
-                <path class="twinkle" style="animation-delay:-1.2s" d="M402 560 C430 470 500 420 566 350"/>
-                <path class="twinkle" style="animation-delay:-2.2s" d="M400 500 C404 430 398 360 402 280"/>
-              </g>
-            </g>
-            <!-- canopy -->
-            <g fill="url(#gLeaf)">
-              <circle cx="180" cy="350" r="90"/><circle cx="650" cy="340" r="90"/>
-              <circle cx="250" cy="280" r="120"/><circle cx="560" cy="270" r="130"/>
-              <circle cx="400" cy="330" r="110"/><circle cx="400" cy="230" r="150"/>
-              <circle cx="330" cy="160" r="110"/><circle cx="480" cy="150" r="115"/>
-              <circle cx="400" cy="100" r="100"/>
-            </g>
-            <g fill="#9ff5d4" filter="url(#fGlow)">
-              <circle class="twinkle" cx="300" cy="200" r="4"/><circle class="twinkle" style="animation-delay:-.8s" cx="470" cy="120" r="4"/>
-              <circle class="twinkle" style="animation-delay:-1.6s" cx="560" cy="300" r="5"/><circle class="twinkle" style="animation-delay:-2.4s" cx="220" cy="300" r="4"/>
-              <circle class="twinkle" style="animation-delay:-.4s" cx="400" cy="60" r="4"/><circle class="twinkle" style="animation-delay:-2s" cx="610" cy="370" r="4"/>
-              <circle class="twinkle" style="animation-delay:-1s" cx="360" cy="320" r="5"/><circle class="twinkle" style="animation-delay:-2.8s" cx="170" cy="360" r="4"/>
-            </g>
-            <!-- treehouse -->
-            <g>
-              <rect x="296" y="574" width="208" height="14" rx="3" fill="#8a6a3f"/>
-              <path d="M310 588 L330 640 M490 588 L470 640" stroke="#6a4a2c" stroke-width="8" stroke-linecap="round"/>
-              <rect x="330" y="504" width="140" height="70" fill="#6a4a2c"/>
-              <path d="M330 504 V574 M365 504 V574 M400 504 V574 M435 504 V574" stroke="#4f3720" stroke-width="2"/>
-              <path d="M318 506 L400 446 L482 506 Z" fill="#4b6b3a"/>
-              <path d="M326 504 L400 452 L474 504" fill="none" stroke="#6f9a50" stroke-width="3" opacity="0.7"/>
-              <rect x="358" y="520" width="26" height="28" rx="3" fill="#ffd27a" filter="url(#fGlow)"/>
-              <rect x="424" y="526" width="26" height="48" rx="3" fill="#3a281c"/>
-              <g stroke="#b99a62" stroke-width="2" fill="none">
-                <path d="M312 588 L312 780 M334 588 L334 780"/>
-                <path d="M312 620 H334 M312 650 H334 M312 680 H334 M312 710 H334 M312 740 H334 M312 770 H334"/>
-              </g>
-              <g stroke="#ffd27a" stroke-width="1.5" opacity="0.9">
-                <path d="M296 574 H504 M300 566 Q400 552 500 566" fill="none"/>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!-- hanging vines (generated in script.js) -->
-        <div class="layer l-vines" data-speed="0.04" aria-hidden="true">
-          <svg id="vines" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMin slice"></svg>
-        </div>
-
-        <div class="fireflies" id="hero-flies" aria-hidden="true"></div>
-
-        <!-- foreground leaves -->
         <div class="layer l-fg" data-speed="0" aria-hidden="true">
-          <svg viewBox="0 0 1440 300" preserveAspectRatio="none">
-            <path fill="#2c5a3a" d="M0 300 C30 210 110 150 220 128 C190 190 140 250 130 300 Z"/>
-            <path fill="#2c5a3a" d="M1440 300 C1410 200 1330 150 1210 120 C1250 190 1300 250 1310 300 Z"/>
-            <path fill="#17301f" d="M0 300 C60 240 150 200 270 195 C230 240 190 270 175 300 Z"/>
-            <path fill="#17301f" d="M1440 300 C1380 235 1290 200 1170 190 C1210 235 1250 270 1265 300 Z"/>
-            <path fill="#1f3a2e" d="M0 300 L0 236 C200 214 300 254 480 244 C700 228 900 258 1100 238 C1250 224 1350 242 1440 228 L1440 300 Z"/>
+          <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+            <path fill="#f5f1e9" d="M0 150 L0 92 C240 40 480 120 720 80 C960 40 1200 110 1440 70 L1440 150 Z"/>
           </svg>
         </div>
 
         <div class="hero-content" id="hero-content">
           <div class="wrap">
             <div class="eyebrow">Salt Lake City &amp; the Wasatch Front</div>
-            <h1>Faux rock that looks like it grew there.</h1>
-            <p class="lead">Repair, repainting and care for waterfalls, streams, grottos and every kind of rockwork. Restored so it blends into your landscape for years.</p>
+            <h1>Faux rock, repaired and restored by hand.</h1>
+            <p class="lead">Repair, repainting and upkeep for waterfalls, streams, grottos and every kind of rockwork. Careful, skilled work that holds up.</p>
             <div class="actions">
               <a class="btn" href="#quote">Request a Quote</a>
-              <a class="btn ghost" href="#services">See Services</a>
+              <a class="btn ghost" href="#work">See the Work</a>
             </div>
           </div>
         </div>
@@ -179,49 +215,24 @@
       </section>
 
       <!-- ================= SERVICES ================= -->
-      <section class="s-forest" id="services">
+      <section class="s-paper" id="services">
         <div class="wrap">
-          <div class="kicker reveal">What we do</div>
-          <h2 class="reveal">Every branch of faux rock.</h2>
+          <div class="kicker reveal">Services</div>
+          <h2 class="reveal">Everything faux rock needs.</h2>
           <p class="intro reveal">If it's faux rock, we can restore it. Every job is different, so we quote each one after hearing about it or seeing it.</p>
           <div class="grid">
-            <div class="card reveal">
-              <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 32 L16 14 L22 24 L28 10 L36 32 Z" fill="#7a5a36"/><path d="M20 12 L17 22 L22 26 L19 34" stroke="#2e2419" stroke-width="2" fill="none"/></svg>
-              <h3>Repair</h3>
-              <p>Cracks, chips, broken edges and failed seams in sculpted concrete, shotcrete and fiberglass rock.</p>
-            </div>
-            <div class="card reveal" style="--rd:.08s">
-              <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 34 C8 20 20 8 34 6 C34 20 24 34 8 34 Z" fill="#6a8f4e"/><path d="M10 32 C16 24 22 18 30 10" stroke="#f1e6cc" stroke-width="2" fill="none"/></svg>
-              <h3>Repainting &amp; recoloring</h3>
-              <p>Faded, stained or peeling rock brought back with layered, natural-looking color.</p>
-            </div>
-            <div class="card reveal" style="--rd:.16s">
-              <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 C28 14 32 20 32 26 A12 12 0 0 1 8 26 C8 20 12 14 20 4 Z" fill="#5fb3a8"/></svg>
-              <h3>Sealing &amp; maintenance</h3>
-              <p>Protective sealing and regular upkeep to keep rockwork looking good through Utah sun, freeze and thaw.</p>
-            </div>
-            <div class="card reveal">
-              <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 8 H36 V14 H4 Z" fill="#7a5a36"/><path d="M14 14 C13 22 15 28 13 36 H27 C25 28 27 22 26 14 Z" fill="#8fd9cb"/></svg>
-              <h3>Waterfalls &amp; streams</h3>
-              <p>Leaks, water stains, mineral buildup and tired finishes on faux rock water features.</p>
-            </div>
-            <div class="card reveal" style="--rd:.08s">
-              <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 36 V20 C4 8 14 4 20 4 C26 4 36 8 36 20 V36 Z" fill="#7a5a36"/><path d="M12 36 V24 C12 18 28 18 28 24 V36 Z" fill="#2e2419"/><circle cx="20" cy="28" r="3" fill="#e6b95c"/></svg>
-              <h3>Grottos &amp; pools</h3>
-              <p>Rockwork around pools, ponds and grottos, including touch-ups and full refinishing.</p>
-            </div>
-            <div class="card reveal" style="--rd:.16s">
-              <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="22" r="14" fill="#7a5a36"/><circle cx="20" cy="22" r="9" fill="none" stroke="#e6b95c" stroke-width="2"/><circle cx="20" cy="22" r="4" fill="none" stroke="#e6b95c" stroke-width="2"/></svg>
-              <h3>Anything faux rock</h3>
-              <p>Walls, planters, boulders and commercial or themed rock. Not sure? Ask.</p>
-            </div>
+            <div class="card reveal"><span class="num">01</span><h3>Repair</h3><p>Cracks, chips, broken edges and failed seams in sculpted concrete, shotcrete and fiberglass rock.</p></div>
+            <div class="card reveal" style="--rd:.08s"><span class="num">02</span><h3>Repainting &amp; recoloring</h3><p>Faded, stained or peeling rock brought back with layered, natural-looking color.</p></div>
+            <div class="card reveal" style="--rd:.16s"><span class="num">03</span><h3>Sealing &amp; maintenance</h3><p>Protective sealing and regular upkeep to keep rockwork looking good through Utah sun, freeze and thaw.</p></div>
+            <div class="card reveal"><span class="num">04</span><h3>Waterfalls &amp; streams</h3><p>Leaks, water stains, mineral buildup and tired finishes on faux rock water features.</p></div>
+            <div class="card reveal" style="--rd:.08s"><span class="num">05</span><h3>Grottos &amp; pools</h3><p>Rockwork around pools, ponds and grottos, including touch-ups and full refinishing.</p></div>
+            <div class="card reveal" style="--rd:.16s"><span class="num">06</span><h3>Anything faux rock</h3><p>Walls, planters, boulders and commercial or themed rock. Not sure? Ask.</p></div>
           </div>
         </div>
       </section>
 
       <!-- ================= PROCESS ================= -->
-      <section class="s-parch" id="process">
-        <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 L0 40 C120 0 240 60 380 30 C520 0 640 55 780 35 C920 10 1060 60 1200 30 C1300 12 1380 40 1440 30 L1440 80 Z"/></svg>
+      <section class="s-dark" id="process">
         <div class="wrap">
           <div class="kicker reveal">How it works</div>
           <h2 class="reveal">From first look to finished rock.</h2>
@@ -234,66 +245,49 @@
         </div>
       </section>
 
-      <!-- ================= GALLERY ================= -->
-      <section class="s-bark gallery" id="gallery">
-        <svg class="divider flip" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 L0 40 C120 0 240 60 380 30 C520 0 640 55 780 35 C920 10 1060 60 1200 30 C1300 12 1380 40 1440 30 L1440 80 Z"/></svg>
+      <!-- ================= OUR WORK ================= -->
+      <section class="s-sand work" id="work">
         <div class="wrap">
-          <div class="kicker reveal">Gallery</div>
-          <h2 class="reveal">Our work, framed.</h2>
-          <p class="intro reveal">Project photos are coming soon.</p>
-          <div class="grid">
+          <div class="kicker reveal">Our work</div>
+          <h2 class="reveal">Hands-on, start to finish.</h2>
+          <p class="intro reveal">Real rockwork takes real labor: patching, matching color, layering paint and sealing it to last.</p>
+          <div class="work-grid">
             <figure class="reveal">
-              <div class="frame">
-                <div class="ba"><div class="ph">Before photo</div><div class="ph">After photo</div></div>
-              </div>
-              <figcaption>Waterfall repair and repaint</figcaption>
+              <div class="media"><div data-drift="0.1"><svg viewBox="0 0 600 450" role="img" aria-label="Illustration of a worker repainting a faux rock wall"><use href="#scene-paint"/></svg></div></div>
+              <figcaption><strong>Repainting a rock wall</strong><span>Layer by layer, matched to the surrounding stone.</span></figcaption>
             </figure>
             <figure class="reveal" style="--rd:.1s">
-              <div class="frame">
-                <div class="ba"><div class="ph">Before photo</div><div class="ph">After photo</div></div>
-              </div>
-              <figcaption>Stream and grotto refinish</figcaption>
+              <div class="media"><div data-drift="0.1"><svg viewBox="0 0 600 450" role="img" aria-label="Illustration of a worker repairing a crack in faux rock"><use href="#scene-crack"/></svg></div></div>
+              <figcaption><strong>Repairing cracks</strong><span>Cut out, patched and textured so the repair disappears.</span></figcaption>
             </figure>
             <figure class="reveal" style="--rd:.2s">
-              <div class="frame"><div class="ph">Project photo</div></div>
-              <figcaption>Rockwork maintenance</figcaption>
+              <div class="media"><div data-drift="0.1"><svg viewBox="0 0 600 450" role="img" aria-label="Illustration of a worker sealing a faux rock waterfall"><use href="#scene-seal"/></svg></div></div>
+              <figcaption><strong>Sealing waterfalls</strong><span>Protective sealer to stand up to sun, water and freeze-thaw.</span></figcaption>
             </figure>
           </div>
+          <div class="ba">
+            <div class="ph reveal">Before photo</div>
+            <div class="ph reveal" style="--rd:.1s">After photo</div>
+          </div>
+          <p class="ph-note">Illustrations shown. Real project photos coming soon.</p>
         </div>
       </section>
 
       <!-- ================= ABOUT ================= -->
-      <section class="s-parch" id="about">
-        <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 L0 40 C120 0 240 60 380 30 C520 0 640 55 780 35 C920 10 1060 60 1200 30 C1300 12 1380 40 1440 30 L1440 80 Z"/></svg>
+      <section class="s-stone" id="about">
         <div class="wrap about">
           <div>
             <div class="kicker reveal">About</div>
-            <h2 class="reveal">Rooted in the backyard.</h2>
+            <h2 class="reveal">Built on hands-on experience.</h2>
             <p class="reveal">Wasatch Faux Rock is a new, locally run business built on hands-on experience maintaining and repairing the faux rock and water features in my own backyard. I know how these features age in Utah's climate and what it takes to make repairs disappear.</p>
             <p class="reveal">I'm taking on projects of all sizes, residential and commercial, and I'm happy to talk through whatever you've got.</p>
           </div>
-          <div class="rings-wrap reveal" aria-hidden="true">
-            <div data-drift="0.06">
-              <svg class="rings" viewBox="0 0 300 300">
-                <g fill="none" stroke-linecap="round">
-                  <circle cx="150" cy="150" r="140" stroke="#7a5a36" stroke-width="10"/>
-                  <circle cx="150" cy="150" r="118" stroke="#a08157" stroke-width="5"/>
-                  <circle cx="150" cy="150" r="96" stroke="#7a5a36" stroke-width="7"/>
-                  <circle cx="150" cy="150" r="74" stroke="#a08157" stroke-width="4"/>
-                  <circle cx="150" cy="150" r="52" stroke="#7a5a36" stroke-width="6"/>
-                  <circle cx="150" cy="150" r="30" stroke="#a08157" stroke-width="4"/>
-                  <circle cx="150" cy="150" r="10" fill="#e6b95c" stroke="none"/>
-                  <path d="M150 150 L236 54" stroke="#3a2a1f" stroke-width="2" opacity="0.4"/>
-                </g>
-              </svg>
-            </div>
-          </div>
+          <div class="media reveal"><div data-drift="0.08"><svg viewBox="0 0 600 450" role="img" aria-label="Illustration of a worker repairing faux rock"><use href="#scene-crack"/></svg></div></div>
         </div>
       </section>
 
       <!-- ================= SERVICE AREA ================= -->
-      <section class="s-moss" id="areas">
-        <svg class="divider flip" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 L0 40 C120 0 240 60 380 30 C520 0 640 55 780 35 C920 10 1060 60 1200 30 C1300 12 1380 40 1440 30 L1440 80 Z"/></svg>
+      <section class="s-paper" id="areas">
         <div class="wrap">
           <div class="kicker reveal">Service area</div>
           <h2 class="reveal">Salt Lake and the surrounding valley.</h2>
@@ -317,11 +311,7 @@
       </section>
 
       <!-- ================= QUOTE ================= -->
-      <section class="s-grotto" id="quote">
-        <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 L0 40 C120 0 240 60 380 30 C520 0 640 55 780 35 C920 10 1060 60 1200 30 C1300 12 1380 40 1440 30 L1440 80 Z"/></svg>
-        <div class="fall a" aria-hidden="true"></div>
-        <div class="fall b" aria-hidden="true"></div>
-        <div class="fireflies" id="grotto-flies" aria-hidden="true"></div>
+      <section class="s-dark quote" id="quote">
         <div class="wrap">
           <div class="kicker reveal">Free quote</div>
           <h2 class="reveal">Tell us about your rockwork.</h2>
