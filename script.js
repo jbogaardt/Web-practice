@@ -1,9 +1,7 @@
-// Quote form: sends the request to the owner's inbox through FormSubmit (formsubmit.co).
-// The first submission from the live site triggers a one-time activation email;
-// click the link in it and later requests arrive normally.
-// If sending fails, the visitor's email app opens with the request filled in instead.
-const QUOTE_EMAIL = "skbogaardt@gmail.com";
-const ENDPOINT = `https://formsubmit.co/ajax/${QUOTE_EMAIL}`;
+// Quote form: sends the request to a hosted form endpoint that forwards it to the
+// owner's inbox, so no email address appears anywhere on the site.
+// Paste the endpoint URL here once it exists (e.g. "https://formspree.io/f/xxxxxxxx").
+const FORM_ENDPOINT = "";
 
 const form = document.getElementById("quote-form");
 const status = document.getElementById("quote-status");
@@ -14,42 +12,29 @@ function show(message, isError) {
   status.className = isError ? "status error" : "status ok";
 }
 
-function mailtoFallback(data) {
-  const lines = [
-    `Name: ${data.get("name")}`,
-    `Phone: ${data.get("phone")}`,
-    `Email: ${data.get("email")}`,
-    `City: ${data.get("city")}`,
-    `Project type: ${data.get("type")}`,
-    "",
-    `${data.get("details")}`,
-  ];
-  const subject = `Quote request: ${data.get("type")} (${data.get("city")})`;
-  window.location.href =
-    `mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent(subject)}` +
-    `&body=${encodeURIComponent(lines.join("\n"))}`;
-}
-
 if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const data = new FormData(form);
+
+    if (!FORM_ENDPOINT) {
+      show("The quote form isn't connected yet (development mode). Please check back soon.", true);
+      return;
+    }
+
     button.disabled = true;
     show("Sending...", false);
 
     try {
-      const response = await fetch(ENDPOINT, {
+      const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { Accept: "application/json" },
-        body: data,
+        body: new FormData(form),
       });
-      const result = await response.json();
-      if (!response.ok || result.success === "false") throw new Error("send failed");
+      if (!response.ok) throw new Error("send failed");
       form.reset();
       show("Thanks! Your request was sent. We'll get back to you soon.", false);
     } catch (error) {
-      show("Couldn't send automatically. Opening your email app instead.", true);
-      mailtoFallback(data);
+      show("Sorry, that didn't send. Please try again in a moment.", true);
     } finally {
       button.disabled = false;
     }
