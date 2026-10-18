@@ -457,6 +457,10 @@ footer h4 { margin: 0 0 16px; font-family: var(--display); font-size: 0.72rem; l
 .foot-areas { grid-template-columns: 1fr 1fr; column-gap: 20px; }
 footer a:not(.btn) { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.28); }
 footer a:not(.btn):hover { color: var(--terracotta-light); border-color: currentColor; }
+/* 44px-tall tap targets so phone and email links are easy to hit with a thumb */
+.contact-link { display: inline-flex; align-items: center; min-height: 44px; }
+footer a.contact-link { border-bottom: 0; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(255, 255, 255, 0.35); }
+footer a.contact-link:hover { text-decoration-color: currentColor; }
 footer a.brand { border-bottom: 0; display: inline-flex; }
 .foot-btn { margin-top: 20px; }
 .foot-legal { margin: 26px 0 0; }
