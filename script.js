@@ -1,7 +1,7 @@
 // Quote form: sends the request to a hosted form endpoint that forwards it to the
 // owner's inbox, so no email address appears anywhere on the site.
 // Paste the endpoint URL here once it exists (e.g. "https://formspree.io/f/xxxxxxxx").
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://formspree.io/f/mppqnygv";
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

@@ -22,7 +22,7 @@ Modern, professional, smooth parallax with a crisp, precise look. The palette is
 - Phone `(801) 555-0100` and email `quotes@example.com` are fake. They appear in `index.html` (footer and form `action`) and in `script.js` (`QUOTE_EMAIL`). Remove the "Development mode" notice in the quote section and the footer note when real details are in.
 - Photos: drop the files listed under Style into `images/`. Until then the slots show placeholder labels.
 - The About section avoids credentials the business doesn't have yet (no licensed/insured/years claims). Only add credibility claims the owner confirms.
-- The quote form posts to a hosted form endpoint set in `FORM_ENDPOINT` in `script.js` (empty until the owner creates one, e.g. a Formspree form). The owner's real inbox address must never appear in the site files, so the endpoint URL (not an email) is what goes in the code. The footer email `quotes@example.com` is still a placeholder.
+- The quote form posts to a hosted form endpoint set in `FORM_ENDPOINT` in `script.js` (set to the owner's Formspree form, `https://formspree.io/f/mppqnygv`). The owner's real inbox address must never appear in the site files, so the endpoint URL (not an email) is what goes in the code. The footer email `quotes@example.com` is still a placeholder.
 
 ## Deployment
 
