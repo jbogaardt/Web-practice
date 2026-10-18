@@ -10,7 +10,9 @@
   --oatmeal: #eee6d6;         /* warm oatmeal behind the service cards */
   --card: #fbfaf7;            /* raised cards and form fields */
   --terracotta: #b4533c;      /* accents, buttons, focus rings */
-  --terracotta-deep: #9a4330; /* button hover, error text */
+  --terracotta-deep: #9a4330; /* error text */
+  --rust: #8a3a26;            /* button hover and tap: a deeper, richer rust */
+  --rust-deep: #752f1e;       /* button pressed */
   --terracotta-light: #e3a890; /* small accent text on dark */
   --moss: #2d4a3e;            /* secondary accents and the About section */
   --ink: var(--slate);
@@ -26,7 +28,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 
 body {
   margin: 0;
@@ -77,8 +79,10 @@ nav a:not(.btn):hover { opacity: 1; color: var(--terracotta-light); }
   cursor: pointer;
   transition: transform 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
-.btn:hover { background: var(--terracotta-deep); border-color: var(--terracotta-deep); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30, 35, 39, 0.28); }
-.btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(30, 35, 39, 0.22); }
+.btn:hover, .btn:focus-visible { background: var(--rust); border-color: var(--rust); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30, 35, 39, 0.28); }
+.btn:active { background: var(--rust-deep); border-color: var(--rust-deep); transform: translateY(0); box-shadow: 0 2px 8px rgba(30, 35, 39, 0.22); }
+.btn.ghost:hover, .btn.ghost:focus-visible { background: rgba(245, 243, 239, 0.1); border-color: rgba(245, 243, 239, 0.9); }
+.btn.ghost:active { background: rgba(245, 243, 239, 0.18); }
 /* Secondary action: thin outline only, so it never competes with the primary button */
 .btn.ghost { background: transparent; border: 1px solid rgba(245, 243, 239, 0.55); box-shadow: none; font-weight: 600; }
 .btn.ghost:hover { background: rgba(245, 243, 239, 0.08); border-color: rgba(245, 243, 239, 0.9); box-shadow: none; transform: translateY(-1px); }
@@ -180,12 +184,12 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
   box-shadow: 0 1px 2px rgba(60, 45, 25, 0.03), 0 8px 24px rgba(60, 45, 25, 0.05);   /* ... floating on a soft shadow */
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s;
 }
-.card:hover { transform: translateY(-5px); box-shadow: 0 2px 4px rgba(60, 45, 25, 0.04), 0 18px 36px rgba(60, 45, 25, 0.09); }
+.card:hover, .card:active { transform: translateY(-4px); box-shadow: 0 3px 6px rgba(60, 45, 25, 0.08), 0 18px 36px rgba(60, 45, 25, 0.16); }
 .card .ico-tile { grid-area: icon; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: rgba(180, 83, 60, 0.1); color: var(--terracotta); transition: background 0.3s, color 0.3s; }
 .card:hover .ico-tile { background: var(--terracotta); color: #fff; }
 .card .ico { width: 28px; height: 28px; stroke-width: 2; }
 .card h3 { grid-area: title; margin: 0; padding-right: 34px; line-height: 1.2; }
-.card .num { position: absolute; top: 20px; right: 22px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; color: rgba(35, 40, 44, 0.32); }
+.card .num { position: absolute; top: 20px; right: 22px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; color: #5b6268; }
 .card p { grid-area: text; margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
 /* ---------- Process ---------- */
@@ -339,7 +343,7 @@ section:not(.hero) > .wrap { position: relative; z-index: 2; }
   font-weight: 650; font-size: 0.95rem; text-decoration: none;
   transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
 }
-.cta-btn:hover { background: var(--terracotta-deep); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(35, 40, 44, 0.22); }
+.cta-btn:hover, .cta-btn:active { background: var(--rust); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(35, 40, 44, 0.22); }
 .sample-note { margin-top: 36px; font-size: 0.9rem; color: var(--muted); }
 
 /* ---------- About ---------- */
@@ -368,6 +372,18 @@ textarea { min-height: 130px; resize: vertical; }
 .status { margin: 0; font-weight: 650; min-height: 1.4em; }
 .status.ok { color: var(--moss); }
 .status.error { color: var(--terracotta-deep); }
+
+/* ---------- Final call to action ---------- */
+.final-cta { padding: 110px 0 120px; background: linear-gradient(135deg, var(--rust) 0%, #5e2618 100%); color: #fff; text-align: center; overflow: hidden; }
+.final-cta::before { display: none; }
+.final-cta::after { content: ""; position: absolute; inset: 0; background: var(--sil-on-dark) bottom / 100% 60% no-repeat; opacity: 0.9; pointer-events: none; }
+.final-cta .wrap { position: relative; z-index: 2; }
+.final-cta h2 { color: #fff; font-size: clamp(2.2rem, 6.4vw, 4.4rem); line-height: 1.04; max-width: 15em; margin: 0 auto 0.4em; }
+.final-cta p { max-width: 34rem; margin: 0 auto 32px; font-size: 1.1rem; color: rgba(255, 255, 255, 0.86); }
+.final-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.btn.light { background: #fff; color: var(--rust); border-color: #fff; font-size: 1.05rem; padding: 16px 34px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28); }
+.btn.light:hover, .btn.light:focus-visible { background: var(--stone); color: var(--rust-deep); border-color: var(--stone); }
+.final-cta .btn.ghost { font-size: 1.05rem; padding: 16px 34px; }
 
 /* ---------- Swatch strip and footer ---------- */
 .swatches { display: grid; grid-template-columns: repeat(5, 1fr); height: 10px; }
