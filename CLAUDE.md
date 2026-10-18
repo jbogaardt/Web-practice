@@ -32,7 +32,7 @@ Modern, professional, smooth parallax. Cool granite palette: charcoal, slate and
 
 ## Workflow
 
-- A Stop hook (`.claude/hooks/push-to-main.sh`, configured in `.claude/settings.json`) commits pending changes and pushes `HEAD` to `origin/main` at the end of each iteration.
+- A Stop hook (`.claude/hooks/push-to-main.sh`, configured in `.claude/settings.json`) commits pending changes and pushes `HEAD` to `origin/main` at the end of each iteration. It also bumps the `?v=` cache-busting number on `styles.css` and `script.js` in `index.html` so visitors never see a stale cached copy. Keep those `?v=` suffixes in place.
 - Because of that hook, changes made in a session go live on GitHub Pages without a separate step. Check the result before ending a turn if a change could break the page.
 - Before each change request, a `UserPromptSubmit` hook (`.claude/hooks/pull-main.sh`) fast-forwards the checkout to `origin/main`. It never merges or rewrites history, so if it reports it could not fast-forward (local changes or diverged history), resolve that before editing. This keeps parallel Claude instances on the same base and minimizes merge conflicts.
 - Work directly on `main`. Do not create feature branches: iterate on `main` and check the change on the deployed site.

@@ -6,6 +6,8 @@ set -euo pipefail
 cd "${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel)}"
 
 if [ -n "$(git status --porcelain)" ]; then
+  # Cache-bust the stylesheet and script so browsers fetch the new deploy, not a cached copy.
+  sed -i -E "s/(styles\.css|script\.js)\?v=[0-9]+/\1?v=$(date +%s)/g" index.html
   git add -A
   git commit -m "Update site" -m "Claude-Session: https://claude.ai/code/session_01XvXTGRRHktpBHCSwz3jeKY"
 fi
