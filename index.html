@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap">
-    <link rel="stylesheet" href="styles.css?v=1792354283">
+    <link rel="stylesheet" href="styles.css?v=1792354383">
     <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
@@ -70,7 +70,10 @@
 
         <div class="layer l-fg" data-speed="0" aria-hidden="true">
           <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
-            <path fill="#f5f3ef" d="M0 150 L0 92 C240 40 480 120 720 80 C960 40 1200 110 1440 70 L1440 150 Z"/>
+            <defs><linearGradient id="fgFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5f3ef" stop-opacity="0"/><stop offset="0.85" stop-color="#f5f3ef" stop-opacity="0.9"/><stop offset="1" stop-color="#f5f3ef"/></linearGradient></defs>
+            <rect width="1440" height="150" fill="url(#fgFade)"/>
+            <path fill="#f5f3ef" opacity="0.18" d="M0 150 L0 96 L110 70 L210 92 L330 40 L430 82 L540 58 L650 98 L760 36 L870 80 L980 54 L1090 96 L1200 50 L1310 88 L1440 62 L1440 150Z"/>
+            <path fill="#f5f3ef" d="M0 150 L0 124 L160 108 L330 126 L520 100 L720 128 L930 106 L1130 126 L1290 108 L1440 120 L1440 150Z"/>
           </svg>
         </div>
 
@@ -339,6 +342,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=1792354283"></script>
+    <script src="script.js?v=1792354383"></script>
   </body>
 </html>

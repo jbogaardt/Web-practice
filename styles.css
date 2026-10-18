@@ -62,22 +62,25 @@ nav a:not(.btn):hover { opacity: 1; color: var(--terracotta-light); }
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
+  white-space: nowrap;
   padding: 13px 26px;
   border-radius: 999px;
   background: var(--terracotta);
   color: #fff;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 16px rgba(30, 35, 39, 0.3);
+  box-shadow: 0 4px 14px rgba(30, 35, 39, 0.22);   /* very soft drop shadow: reads as touchable */
   text-decoration: none;
   font: inherit;
   font-weight: 650;
   font-size: 0.95rem;
-  border: 0;
+  border: 1.5px solid var(--terracotta);
   cursor: pointer;
-  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
-.btn:hover { background: var(--terracotta-deep); transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 26px rgba(30, 35, 39, 0.35); }
-.btn.ghost { background: rgba(245, 243, 239, 0.06); border: 1.5px solid rgba(245, 243, 239, 0.65); box-shadow: none; }
-.btn.ghost:hover { background: rgba(245, 243, 239, 0.14); box-shadow: none; }
+.btn:hover { background: var(--terracotta-deep); border-color: var(--terracotta-deep); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30, 35, 39, 0.28); }
+.btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(30, 35, 39, 0.22); }
+/* Secondary action: thin outline only, so it never competes with the primary button */
+.btn.ghost { background: transparent; border: 1px solid rgba(245, 243, 239, 0.55); box-shadow: none; font-weight: 600; }
+.btn.ghost:hover { background: rgba(245, 243, 239, 0.08); border-color: rgba(245, 243, 239, 0.9); box-shadow: none; transform: translateY(-1px); }
 a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
 
 /* ---------- Hero ---------- */
@@ -120,7 +123,32 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, 
 .scroll-cue::after { content: ""; display: block; width: 2px; height: 30px; margin-top: 8px; background: linear-gradient(var(--terracotta-light), transparent); animation: cue 2.2s ease-in-out infinite; }
 
 /* ---------- Sections ---------- */
+/* Section transitions: instead of a hard wave, each section's top edge softly emerges from the previous
+   section's color through a gradient, with a very faint natural rock-ridge silhouette for depth. */
+:root { --sil-on-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath fill='rgba(30,35,39,.055)' d='M0 160 L0 112 L90 84 L170 104 L270 48 L360 92 L450 70 L560 110 L680 40 L780 88 L880 62 L990 104 L1090 52 L1190 96 L1290 66 L1440 100 L1440 160Z'/%3E%3Cpath fill='rgba(30,35,39,.055)' opacity='.7' d='M0 160 L0 132 L140 116 L260 134 L420 106 L600 136 L780 118 L960 138 L1140 112 L1300 132 L1440 120 L1440 160Z'/%3E%3C/svg%3E"); --sil-on-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath fill='rgba(245,243,239,.05)' d='M0 160 L0 112 L90 84 L170 104 L270 48 L360 92 L450 70 L560 110 L680 40 L780 88 L880 62 L990 104 L1090 52 L1190 96 L1290 66 L1440 100 L1440 160Z'/%3E%3Cpath fill='rgba(245,243,239,.05)' opacity='.7' d='M0 160 L0 132 L140 116 L260 134 L420 106 L600 136 L780 118 L960 138 L1140 112 L1300 132 L1440 120 L1440 160Z'/%3E%3C/svg%3E"); }
 section { position: relative; padding: 120px 0; background: var(--bg); color: var(--fg); }
+section:not(.hero)::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 150px;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    var(--sil) bottom / 100% 100% no-repeat,
+    linear-gradient(180deg, color-mix(in srgb, var(--prev, transparent) 55%, transparent) 0%, transparent 100%);
+  opacity: 1;
+}
+.s-paper, #work, #areas { --sil: var(--sil-on-light); }
+.s-dark, .s-stone { --sil: var(--sil-on-dark); }
+section:not(.hero)::before { -webkit-mask: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); mask: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); }
+#services { --prev: var(--slate-deep); }
+#process  { --prev: var(--stone); }
+#work     { --prev: var(--slate-deep); }
+#about    { --prev: var(--stone); }
+#areas    { --prev: var(--moss); }
+#quote    { --prev: var(--stone); }
+section:not(.hero) > .wrap { position: relative; z-index: 2; }
 .s-paper { --bg: var(--stone); --fg: var(--ink); }
 .s-sand { --bg: var(--limestone); --fg: var(--ink); }
 .s-dark { --bg: var(--slate-deep); --fg: var(--on-dark); }
