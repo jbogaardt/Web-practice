@@ -14,8 +14,10 @@
   --sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* granite speckle tiles (white flecks on dark stone, dark flecks on light stone) */
-  --fleck-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.6 -0.78'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-  --fleck-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.6 -0.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  --fleck-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='f3' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.055' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.82 0 0 0 0 0.85 0 0 0 12 -8.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f3)' opacity='0.2'/%3E%3Cfilter id='f8' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.115' numOctaves='2' seed='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.55 0 0 0 0 0.58 0 0 0 12 -8.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f8)' opacity='0.26'/%3E%3Cfilter id='f14' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.19' numOctaves='2' seed='14' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.0 0 0 0 0 0.0 0 0 0 0 0.0 0 0 0 13 -8.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f14)' opacity='0.5'/%3E%3Cfilter id='f21' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='1' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.92 0 0 0 0 0.95 0 0 0 0 0.97 0 0 0 15 -11.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f21)' opacity='0.22'/%3E%3C/svg%3E");
+  --fleck-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='f5' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.055' numOctaves='2' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.2 0 0 0 0 0.22 0 0 0 12 -8.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f5)' opacity='0.1'/%3E%3Cfilter id='f9' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.115' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.6 0 0 0 0 0.63 0 0 0 12 -8.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f9)' opacity='0.14'/%3E%3Cfilter id='f16' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.19' numOctaves='2' seed='16' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1.0 0 0 0 0 1.0 0 0 0 0 1.0 0 0 0 13 -8.5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f16)' opacity='0.6'/%3E%3Cfilter id='f23' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='1' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.12 0 0 0 0 0.14 0 0 0 15 -11.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f23)' opacity='0.14'/%3E%3C/svg%3E");
+  --mottle-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='f31' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0045' numOctaves='3' seed='31' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2.4 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f31)' opacity='0.1'/%3E%3Cfilter id='f37' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006' numOctaves='3' seed='37' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.6 -1.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f37)' opacity='0.35'/%3E%3C/svg%3E");
+  --mottle-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='f41' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0045' numOctaves='3' seed='41' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2.4 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f41)' opacity='0.55'/%3E%3Cfilter id='f47' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006' numOctaves='3' seed='47' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.13 0 0 0 0 0.16 0 0 0 2.6 -1.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f47)' opacity='0.1'/%3E%3C/svg%3E");
 }
 
 * { box-sizing: border-box; }
@@ -84,6 +86,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, 
   background:
     radial-gradient(ellipse 50% 60% at 80% 55%, rgba(120, 160, 185, 0.22), transparent 70%),
     var(--fleck-light),
+    var(--mottle-dark),
     linear-gradient(160deg, #2c3338 0%, #3b4449 55%, #15181a 100%);
 }
 .hero::after {
@@ -112,11 +115,11 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, 
 .scroll-cue::after { content: ""; display: block; width: 2px; height: 30px; margin-top: 8px; background: linear-gradient(var(--accent), transparent); animation: cue 2.2s ease-in-out infinite; }
 
 /* ---------- Sections ---------- */
-section { position: relative; padding: 120px 0; background: var(--speck, none), var(--bg); color: var(--fg); }
-.s-paper { --bg: var(--paper); --fg: var(--ink); --speck: var(--fleck-dark); }
-.s-sand { --bg: var(--mist); --fg: var(--ink); --speck: var(--fleck-dark); }
-.s-dark { --bg: var(--char); --fg: #e8ecee; --speck: var(--fleck-light); }
-.s-stone { --bg: var(--stone); --fg: #e8ecee; --speck: var(--fleck-light); }
+section { position: relative; padding: 120px 0; background: var(--speck, none), var(--mottle, none), var(--bg); color: var(--fg); }
+.s-paper { --bg: var(--paper); --fg: var(--ink); --speck: var(--fleck-dark); --mottle: var(--mottle-light); }
+.s-sand { --bg: var(--mist); --fg: var(--ink); --speck: var(--fleck-dark); --mottle: var(--mottle-light); }
+.s-dark { --bg: var(--char); --fg: #e8ecee; --speck: var(--fleck-light); --mottle: var(--mottle-dark); }
+.s-stone { --bg: var(--stone); --fg: #e8ecee; --speck: var(--fleck-light); --mottle: var(--mottle-dark); }
 .s-paper:first-of-type { padding-top: 90px; }
 
 .kicker { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--accent-dark); margin-bottom: 10px; }
