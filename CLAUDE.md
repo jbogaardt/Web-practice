@@ -8,12 +8,12 @@ The site is static HTML/CSS/JS at the repo root: `index.html`, `styles.css`, `sc
 
 ## Style
 
-Modern, professional, smooth parallax. Natural earth tones: warm stone neutrals, charcoal, clay and a gold accent. Colors are CSS variables at the top of `styles.css`. Pricing is never shown; every job is "request a quote". No fantasy, jungle, treehouse or Disney theming, and no trademarked names, characters or art.
+Modern, professional, smooth parallax. Cool granite palette: charcoal, slate and silver grays with a steel-blue accent. No orange or brown. Depth comes from speckled granite texture (`--fleck-light` / `--fleck-dark` in `styles.css`), layered shadows, inset highlights and faceted shapes. Colors are CSS variables at the top of `styles.css`. Pricing is never shown; every job is "request a quote". No fantasy, jungle, treehouse or Disney theming, and no trademarked names, characters or art.
 
 - **Real photos only.** The site should show real people doing real, hard faux rock work. No cartoons, illustrations or AI-generated people. Use only photos of the owner's own work (or photos the owner supplies); never pass stock photos off as the business's work.
 - Photo slots show a striped label until the image file exists in `images/`, then the photo covers it automatically (no code change). Expected files: `hero.jpg` (wide, landscape, men working on faux rock), `work-1.jpg` (repainting), `work-2.jpg` (crack repair), `work-3.jpg` (sealing a waterfall), `before.jpg`, `after.jpg`, `about.jpg` (owner at work). Keep them web-sized (about 2000px wide max, under ~400 KB each).
 - Add alt text if a slot becomes a real `<img>`. Slots are CSS backgrounds today, so give each photo's `figcaption` or `aria-label` descriptive text.
-- The hero photo is a parallax layer (`data-speed`) under a dark gradient overlay so the white headline stays readable. `script.js` eases the scroll position each frame for smooth motion and drifts photos inside `.media` frames (`data-drift`).
+- The hero has faceted granite slabs (`.l-slabs`) as fallback art behind the photo, hidden once `hero.jpg` exists. The hero photo is a parallax layer (`data-speed`) under a dark gradient overlay so the white headline stays readable. `script.js` eases the scroll position each frame for smooth motion and drifts photos inside `.media` frames (`data-drift`).
 - Sections use clean straight edges, scroll-reveal (`.reveal`) and light cards. Everything must respect `prefers-reduced-motion`.
 
 ## Placeholders to replace before launch
