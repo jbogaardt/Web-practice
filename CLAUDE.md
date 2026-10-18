@@ -8,7 +8,11 @@ The site is static HTML/CSS/JS at the repo root: `index.html`, `styles.css`, `sc
 
 ## Style
 
-Natural, neutral, professional, earth-toned. Colors are CSS variables at the top of `styles.css`. Pricing is never shown; every job is "request a quote".
+Smooth, modern parallax with a hint of a giant tree of life / jungle treehouse: natural, neutral, professional, earth-toned with forest greens, warm gold and a soft teal glow. Colors are CSS variables at the top of `styles.css`. Pricing is never shown; every job is "request a quote".
+
+- The hero is a layered parallax scene built from inline SVG (mountains, faux rock cliff with waterfall, giant tree with treehouse, hanging vines, foreground leaves). Layer speeds are the `data-speed` attributes; `script.js` moves them on scroll. Vines and fireflies are generated in `script.js`.
+- Below the hero, sections have wavy dividers, scroll-reveal (`.reveal`), and wood-and-parchment cards. Gallery placeholders are hanging wooden frames.
+- Everything must respect `prefers-reduced-motion` (parallax, animation and reveal are disabled). Don't use any Disney or other trademarked names, characters or art on the site.
 
 ## Placeholders to replace before launch
 
