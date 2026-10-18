@@ -75,15 +75,23 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, 
   overflow: hidden;
   color: #fff;
   background:
-    radial-gradient(ellipse 45% 50% at 78% 70%, rgba(255, 214, 150, 0.7), rgba(255, 214, 150, 0) 70%),
-    linear-gradient(180deg, #1f2a33 0%, #4f6068 42%, #c9a67f 82%, #e9cfa6 100%);
+    radial-gradient(ellipse 50% 60% at 80% 55%, rgba(194, 105, 58, 0.28), transparent 70%),
+    linear-gradient(160deg, #2a2622 0%, #3a342d 55%, #1c1a18 100%);
 }
-.layer { position: absolute; left: 0; width: 100%; will-change: transform; pointer-events: none; }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(20, 18, 16, 0.84) 0%, rgba(20, 18, 16, 0.55) 48%, rgba(20, 18, 16, 0.15) 100%),
+    linear-gradient(0deg, rgba(20, 18, 16, 0.55), transparent 42%);
+}
+.layer { position: absolute; left: 0; width: 100%; z-index: 1; will-change: transform; pointer-events: none; }
 .layer svg { display: block; width: 100%; height: 100%; }
-.l-far { bottom: 18%; height: 46%; }
-.l-near { bottom: 6%; height: 40%; }
-.l-scene { left: auto; right: -2%; width: 64%; bottom: 0; height: 90%; }
-.l-fg { bottom: -1px; height: 15%; }
+.l-photo { top: -12%; height: 112%; }
+.l-fg { bottom: -1px; height: 15%; z-index: 4; }
 
 .hero-content { position: absolute; z-index: 5; top: 0; left: 0; width: 100%; padding-top: clamp(112px, 22vh, 230px); will-change: transform, opacity; }
 .hero-content h1 { max-width: 11em; text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35); }
@@ -92,7 +100,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, 
 .lead { font-size: 1.18rem; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 
-.scroll-cue { position: absolute; z-index: 6; bottom: 26px; left: 24px; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink); text-decoration: none; font-weight: 650; }
+.scroll-cue { position: absolute; z-index: 6; bottom: 26px; left: 24px; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: #f5f1e9; text-decoration: none; font-weight: 650; }
 .scroll-cue::after { content: ""; display: block; width: 2px; height: 30px; margin-top: 8px; background: linear-gradient(var(--clay), transparent); animation: cue 2.2s ease-in-out infinite; }
 
 /* ---------- Sections ---------- */
@@ -133,14 +141,18 @@ section { position: relative; padding: 120px 0; background: var(--bg); color: va
 .work figure { margin: 0; }
 .media { position: relative; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4 / 3; background: #cfc6b4; box-shadow: 0 18px 40px rgba(36, 33, 29, 0.18); }
 .media > div { position: absolute; inset: -9% 0; will-change: transform; }
-.media svg { display: block; width: 100%; height: 100%; }
 .work figcaption { margin-top: 16px; }
 .work figcaption strong { display: block; font-size: 1.1rem; letter-spacing: -0.01em; }
 .work figcaption span { color: var(--muted); font-size: 0.95rem; }
 
 .ba { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; margin-top: 44px; max-width: 720px; }
-.ph { display: grid; place-items: center; aspect-ratio: 4 / 3; border-radius: var(--radius); border: 2px dashed rgba(36, 33, 29, 0.3); background: repeating-linear-gradient(45deg, #ded6c5, #ded6c5 14px, #e9e2d4 14px, #e9e2d4 28px); color: var(--muted); font-weight: 600; font-size: 0.9rem; text-align: center; padding: 8px; }
 .ph-note { margin-top: 14px; color: var(--muted); font-size: 0.92rem; }
+
+/* Photo slots: the label shows until the image file exists, then the photo covers it. */
+.slot { display: grid; place-items: center; background: repeating-linear-gradient(45deg, #ded6c5, #ded6c5 14px, #e9e2d4 14px, #e9e2d4 28px); }
+.slot-label { position: relative; text-align: center; padding: 12px; color: var(--muted); font-weight: 650; font-size: 0.92rem; line-height: 1.4; }
+.slot-label small { font-weight: 500; opacity: 0.8; }
+.slot-img { position: absolute; inset: 0; background: var(--img) center / cover no-repeat; }
 
 /* ---------- About ---------- */
 .about { display: grid; gap: 56px; grid-template-columns: 1fr; align-items: center; }
@@ -174,23 +186,15 @@ footer { background: #131211; color: #cfc8ba; padding: 38px 0; font-size: 0.95re
 footer p { margin: 0 0 6px; }
 footer .note { color: rgba(207, 200, 186, 0.6); }
 
-/* ---------- Illustration colors (used inside SVG symbols) ---------- */
-.skin { fill: var(--skin, #d9a47c); }
-.shirt { fill: var(--shirt, #6b7a4a); }
-.shirt-s { stroke: var(--shirt, #6b7a4a); }
-.paint { fill: var(--paint, #a8794a); }
-.flow { stroke-dasharray: 10 16; animation: flow 1s linear infinite; }
 
 /* ---------- Scroll reveal ---------- */
 .js .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1s cubic-bezier(0.2, 0.7, 0.2, 1), transform 1s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--rd, 0s); }
 .js .reveal.in { opacity: 1; transform: none; }
 
-@keyframes flow { to { stroke-dashoffset: -26; } }
 @keyframes cue { 0%, 100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.4; } 50% { transform: scaleY(1); opacity: 1; } }
 
 @media (max-width: 700px) {
   nav a:not(.btn) { display: none; }
-  .l-scene { width: 130%; right: -22%; height: 66%; opacity: 0.95; }
   .hero-content h1 { max-width: none; }
   section { padding: 84px 0; }
   .ba { grid-template-columns: 1fr; }

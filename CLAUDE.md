@@ -10,14 +10,16 @@ The site is static HTML/CSS/JS at the repo root: `index.html`, `styles.css`, `sc
 
 Modern, professional, smooth parallax. Natural earth tones: warm stone neutrals, charcoal, clay and a gold accent. Colors are CSS variables at the top of `styles.css`. Pricing is never shown; every job is "request a quote". No fantasy, jungle, treehouse or Disney theming, and no trademarked names, characters or art.
 
-- The site should show hard, skilled labor: men at work repairing, painting and sealing faux rock. With no real photos yet, these are original SVG illustrations. Shared figures (`sym-paint`, `sym-kneel`, `sym-spray`) and scenes (`scene-paint`, `scene-crack`, `scene-seal`) are defined once in the hidden `<svg>` at the top of `index.html` and reused with `<use>`. Replace them with real photos when available.
-- The hero is a layered parallax scene (mountains, a faux rock waterfall half repainted, two workers). Layer speeds are the `data-speed` attributes. `script.js` eases the scroll position each frame so motion is smooth, and also drifts images inside `.media` frames (`data-drift`).
-- Sections use clean straight edges, scroll-reveal (`.reveal`) and light cards. Everything must respect `prefers-reduced-motion` (parallax, animation and reveal are disabled).
+- **Real photos only.** The site should show real people doing real, hard faux rock work. No cartoons, illustrations or AI-generated people. Use only photos of the owner's own work (or photos the owner supplies); never pass stock photos off as the business's work.
+- Photo slots show a striped label until the image file exists in `images/`, then the photo covers it automatically (no code change). Expected files: `hero.jpg` (wide, landscape, men working on faux rock), `work-1.jpg` (repainting), `work-2.jpg` (crack repair), `work-3.jpg` (sealing a waterfall), `before.jpg`, `after.jpg`, `about.jpg` (owner at work). Keep them web-sized (about 2000px wide max, under ~400 KB each).
+- Add alt text if a slot becomes a real `<img>`. Slots are CSS backgrounds today, so give each photo's `figcaption` or `aria-label` descriptive text.
+- The hero photo is a parallax layer (`data-speed`) under a dark gradient overlay so the white headline stays readable. `script.js` eases the scroll position each frame for smooth motion and drifts photos inside `.media` frames (`data-drift`).
+- Sections use clean straight edges, scroll-reveal (`.reveal`) and light cards. Everything must respect `prefers-reduced-motion`.
 
 ## Placeholders to replace before launch
 
 - Phone `(801) 555-0100` and email `quotes@example.com` are fake. They appear in `index.html` (footer and form `action`) and in `script.js` (`QUOTE_EMAIL`). Remove the "Development mode" notice in the quote section and the footer note when real details are in.
-- The "Our work" scenes are illustrations and the before/after boxes are dashed `.ph` placeholders in `index.html`. Put real photos in `images/` and swap them in with descriptive alt text.
+- Photos: drop the files listed under Style into `images/`. Until then the slots show placeholder labels.
 - The About section avoids credentials the business doesn't have yet (no licensed/insured/years claims). Only add credibility claims the owner confirms.
 - The quote form posts to a hosted form endpoint set in `FORM_ENDPOINT` in `script.js` (empty until the owner creates one, e.g. a Formspree form). The owner's real inbox address must never appear in the site files, so the endpoint URL (not an email) is what goes in the code. The footer email `quotes@example.com` is still a placeholder.
 
