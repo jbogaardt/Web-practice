@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap">
-    <link rel="stylesheet" href="styles.css?v=1792355412">
+    <link rel="stylesheet" href="styles.css?v=1792355659">
     <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
@@ -63,9 +63,9 @@
           </svg>
         </div>
 
-        <!-- Hero photo: save as images/hero.jpg (wide, landscape) -->
+        <!-- Hero photo: save as images/hero.webp (wide, landscape) -->
         <div class="layer l-photo" data-speed="0.28" aria-hidden="true">
-          <div class="slot-img" style="--img: url('images/hero.jpg')"></div>
+          <div class="slot-img" style="--img: url('images/hero.webp')"></div>
         </div>
 
         <div class="layer l-fg" data-speed="0" aria-hidden="true">
@@ -129,12 +129,12 @@
           <!-- Interactive before and after comparison -->
           <figure class="compare-card reveal">
             <div class="compare slot" id="compare">
-              <span class="slot-label">Before and after photos<br><small>images/before.jpg &middot; images/after.jpg</small></span>
+              <span class="slot-label">Before and after photos<br><small>images/before.webp &middot; images/after.webp</small></span>
               <div class="compare-layer compare-after">
-                <div class="slot-img" role="img" aria-label="Faux rock after restoration: even, natural color and sealed finish" style="--img: url('images/after.jpg')"></div>
+                <div class="slot-img" role="img" aria-label="Faux rock after restoration: even, natural color and sealed finish" data-img="images/after.webp"></div>
               </div>
               <div class="compare-layer compare-before">
-                <div class="slot-img" role="img" aria-label="Faux rock before restoration: faded color and a visible crack" style="--img: url('images/before.jpg')"></div>
+                <div class="slot-img" role="img" aria-label="Faux rock before restoration: faded color and a visible crack" data-img="images/before.webp"></div>
               </div>
               <span class="compare-tag tag-before" aria-hidden="true">Before</span>
               <span class="compare-tag tag-after" aria-hidden="true">After</span>
@@ -153,7 +153,7 @@
             <figure class="case case-tall reveal">
               <div class="case-img slot">
                 <span class="slot-label">Photo: grotto back wall<br><small>Sample project</small></span>
-                <div class="slot-img" role="img" aria-label="Close-up of a restored grotto wall with layered color" style="--img: url('images/case-grotto.jpg')"></div>
+                <div class="slot-img" role="img" aria-label="Close-up of a restored grotto wall with layered color" data-img="images/case-grotto.webp"></div>
               </div>
               <figcaption>
                 <div class="pills">
@@ -168,7 +168,7 @@
             <figure class="case case-wide reveal" style="--rd:.08s">
               <div class="case-img slot">
                 <span class="slot-label">Photo: crack repair<br><small>Sample project</small></span>
-                <div class="slot-img" role="img" aria-label="Technician repairing a crack in faux rock" style="--img: url('images/work-2.jpg')"></div>
+                <div class="slot-img" role="img" aria-label="Technician repairing a crack in faux rock" data-img="images/work-2.webp"></div>
               </div>
               <figcaption>
                 <div class="pills">
@@ -183,7 +183,7 @@
             <figure class="case case-square reveal" style="--rd:.16s">
               <div class="case-img slot">
                 <span class="slot-label">Photo: waterfall repair<br><small>Sample project</small></span>
-                <div class="slot-img" role="img" aria-label="Faux rock waterfall being sealed" style="--img: url('images/work-3.jpg')"></div>
+                <div class="slot-img" role="img" aria-label="Faux rock waterfall being sealed" data-img="images/work-3.webp"></div>
               </div>
               <figcaption>
                 <div class="pills">
@@ -198,7 +198,7 @@
             <figure class="case case-tall reveal" style="--rd:.04s">
               <div class="case-img slot">
                 <span class="slot-label">Photo: repainted boulder<br><small>Sample project</small></span>
-                <div class="slot-img" role="img" aria-label="Close-up of a repainted faux rock boulder" style="--img: url('images/work-1.jpg')"></div>
+                <div class="slot-img" role="img" aria-label="Close-up of a repainted faux rock boulder" data-img="images/work-1.webp"></div>
               </div>
               <figcaption>
                 <div class="pills">
@@ -213,7 +213,7 @@
             <figure class="case case-wide reveal" style="--rd:.12s">
               <div class="case-img slot">
                 <span class="slot-label">Photo: pool surround<br><small>Sample project</small></span>
-                <div class="slot-img" role="img" aria-label="Faux rock pool surround after refinishing" style="--img: url('images/case-pool.jpg')"></div>
+                <div class="slot-img" role="img" aria-label="Faux rock pool surround after refinishing" data-img="images/case-pool.webp"></div>
               </div>
               <figcaption>
                 <div class="pills">
@@ -247,7 +247,7 @@
             <p class="reveal">Wasatch Faux Rock is a locally owned and operated business grounded in hands-on experience maintaining and repairing the faux rock and water features in our own backyard. We understand how these features age in Utah's climate and what it takes to make repairs blend in.</p>
             <p class="reveal">We take on projects of all sizes, residential and commercial, and welcome the opportunity to discuss yours.</p>
           </div>
-          <div class="media slot reveal"><span class="slot-label">Photo: close-up of finished rock<br><small>images/about.jpg</small></span><div data-drift="0.08"><div class="slot-img" role="img" aria-label="Close-up of recolored faux rock surface" style="--img: url('images/about.jpg')"></div></div></div>
+          <div class="media slot reveal"><span class="slot-label">Photo: close-up of finished rock<br><small>images/about.webp</small></span><div data-drift="0.08"><div class="slot-img" role="img" aria-label="Close-up of recolored faux rock surface" data-img="images/about.webp"></div></div></div>
         </div>
       </section>
 
@@ -283,6 +283,18 @@
           <p class="intro reveal">Pricing varies with the project and site conditions, so every quote is tailored to your needs.</p>
           <div class="form-card reveal">
             <div class="dev-note">Development mode: the phone number and email on this site are placeholders.</div>
+            <div class="thanks" id="quote-thanks" tabindex="-1" role="status" aria-live="polite" hidden>
+              <div class="thanks-badge" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 L13.5 23.5 L25 10"/></svg></div>
+              <h3>Thank You<span id="thanks-name"></span>. Your Request Is In.</h3>
+              <p class="thanks-lead">We will review your rockwork and reach out within 24 hours.</p>
+              <ul class="thanks-steps">
+                <li><b>1</b><span>We read your project details.</span></li>
+                <li><b>2</b><span>We reply by email with next steps, usually a quick site visit.</span></li>
+                <li><b>3</b><span>You receive a clear quote for your site.</span></li>
+              </ul>
+              <p class="thanks-note">Have photos of the rockwork? Send them in your reply and they will help us quote accurately.</p>
+              <button class="btn ghost-dark" type="button" id="thanks-reset">Send Another Request</button>
+            </div>
             <form id="quote-form">
               <input type="hidden" name="_subject" value="New quote request - Wasatch Faux Rock">
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
@@ -352,6 +364,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=1792355412"></script>
+    <script src="script.js?v=1792355659"></script>
   </body>
 </html>

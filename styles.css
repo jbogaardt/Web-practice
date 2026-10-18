@@ -86,7 +86,7 @@ nav a:not(.btn):hover { opacity: 1; color: var(--terracotta-light); }
 /* Secondary action: thin outline only, so it never competes with the primary button */
 .btn.ghost { background: transparent; border: 1px solid rgba(245, 243, 239, 0.55); box-shadow: none; font-weight: 600; }
 .btn.ghost:hover { background: rgba(245, 243, 239, 0.08); border-color: rgba(245, 243, 239, 0.9); box-shadow: none; transform: translateY(-1px); }
-a:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
+a:focus-visible, .btn:focus-visible, button:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -366,7 +366,49 @@ form { display: grid; gap: 16px; }
 .row { display: grid; gap: 16px; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .row { grid-template-columns: 1fr 1fr; } }
 label { display: block; font-weight: 650; font-size: 0.86rem; margin-bottom: 5px; }
-input, select, textarea { width: 100%; padding: 13px 14px; font: inherit; border: 1.5px solid #c4bdb0; border-radius: 12px; background: var(--card); color: var(--ink); }
+label { font-size: 0.9rem; margin-bottom: 8px; }
+input, select, textarea {
+  width: 100%;
+  min-height: 56px;                  /* big, thumb-friendly targets */
+  padding: 15px 16px;
+  font: inherit;
+  font-size: 1rem;                   /* 16px+ stops iOS from zooming on focus */
+  color: var(--ink);
+  background: #fffdf8;               /* off-white fields */
+  border: 1.5px solid #cfc7b8;
+  border-radius: 14px;
+  box-shadow: inset 0 1px 2px rgba(60, 45, 25, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  -webkit-appearance: none; appearance: none;
+}
+input::placeholder, textarea::placeholder { color: #8a8f92; }
+input:hover, select:hover, textarea:hover { border-color: #b5ab99; }
+input:focus, select:focus, textarea:focus, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none;
+  background: #fff;
+  border-color: var(--terracotta);   /* the border turns terracotta while typing */
+  box-shadow: 0 0 0 4px rgba(180, 83, 60, 0.16);
+}
+input:user-invalid, textarea:user-invalid, select:user-invalid { border-color: var(--terracotta-deep); }
+select { padding-right: 44px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10' fill='none' stroke='%23b4533c' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 2 L8 8 L14 2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
+textarea { min-height: 150px; resize: vertical; line-height: 1.5; }
+form .btn[type=submit] { width: 100%; padding: 17px 28px; font-size: 1.05rem; }
+@media (min-width: 640px) { form .btn[type=submit] { width: auto; min-width: 260px; } }
+
+/* ---------- Thank-you state (replaces the form after a successful send) ---------- */
+.thanks { text-align: center; padding: 10px 4px 6px; outline: none; }
+.thanks[hidden], form[hidden], .dev-note[hidden] { display: none !important; }
+.thanks-badge { display: grid; place-items: center; width: 76px; height: 76px; margin: 0 auto 20px; border-radius: 50%; background: var(--moss); color: #fff; box-shadow: 0 0 0 8px rgba(45, 74, 62, 0.14); animation: pop 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+.thanks-badge svg { width: 38px; height: 38px; }
+.thanks h3 { font-size: clamp(1.5rem, 4.6vw, 2rem); margin-bottom: 10px; color: var(--ink); }
+.thanks-lead { font-size: 1.15rem; font-weight: 600; color: var(--ink); max-width: 28rem; margin: 0 auto 24px; }
+.thanks-steps { list-style: none; margin: 0 auto 22px; padding: 0; max-width: 30rem; text-align: left; display: grid; gap: 10px; }
+.thanks-steps li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 14px; background: #fffdf8; border: 1px solid var(--limestone-edge); }
+.thanks-steps b { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(180, 83, 60, 0.12); color: var(--terracotta); font-size: 0.85rem; }
+.thanks-note { color: var(--muted); font-size: 0.95rem; max-width: 28rem; margin: 0 auto 22px; }
+.btn.ghost-dark { background: transparent; color: var(--ink); border: 1px solid rgba(35, 40, 44, 0.35); box-shadow: none; }
+.btn.ghost-dark:hover, .btn.ghost-dark:focus-visible { background: rgba(35, 40, 44, 0.06); border-color: var(--ink); color: var(--ink); box-shadow: none; }
+@keyframes pop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 textarea { min-height: 130px; resize: vertical; }
 .form-card .note { margin: 0; }
 .status { margin: 0; font-weight: 650; min-height: 1.4em; }

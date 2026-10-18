@@ -136,7 +136,28 @@ function show(message, isError) {
   status.className = isError ? "status error" : "status ok";
 }
 
+const thanks = document.getElementById("quote-thanks");
+const devNote = document.querySelector(".dev-note");
+
+/* Branded confirmation: swaps the form for a thank-you panel instead of a browser pop-up. */
+function showThanks(firstName) {
+  document.getElementById("thanks-name").textContent = firstName ? `, ${firstName}` : "";
+  form.hidden = true;
+  if (devNote) devNote.hidden = true;
+  status.textContent = "";
+  thanks.hidden = false;
+  thanks.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+  thanks.focus({ preventScroll: true });
+}
+
 if (form) {
+  document.getElementById("thanks-reset").addEventListener("click", () => {
+    thanks.hidden = true;
+    form.hidden = false;
+    if (devNote) devNote.hidden = false;
+    form.querySelector("input[name=name]").focus();
+  });
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -165,8 +186,9 @@ if (form) {
         failure.detail = detail || `error ${response.status}`;
         throw failure;
       }
+      const firstName = (new FormData(form).get("name") || "").toString().trim().split(/\s+/)[0];
       form.reset();
-      show("Thank you. Your request has been received, and we will be in touch shortly.", false);
+      showThanks(firstName);
     } catch (error) {
       console.error("Quote form error:", error);
       const detail = error.detail || (error instanceof TypeError ? "the request was blocked or the connection failed" : "");
@@ -184,3 +206,22 @@ document.querySelectorAll("[data-focus]").forEach((link) => {
     if (target) setTimeout(() => target.focus({ preventScroll: true }), 700);
   });
 });
+
+/* ---------- Lazy-loaded photos ----------
+   Photos below the hero carry their path in data-img and are only requested as they approach the
+   viewport, so the hero loads first. (CSS background images cannot use loading="lazy".) */
+const lazyImages = document.querySelectorAll("[data-img]");
+const loadImage = (el) => el.style.setProperty("--img", `url('${el.dataset.img}')`);
+if ("IntersectionObserver" in window) {
+  const imageObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        loadImage(entry.target);
+        imageObserver.unobserve(entry.target);
+      }
+    }
+  }, { rootMargin: "500px 0px" });
+  lazyImages.forEach((el) => imageObserver.observe(el));
+} else {
+  lazyImages.forEach(loadImage);
+}
