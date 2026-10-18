@@ -144,7 +144,10 @@
           <h2>Request a quote</h2>
           <p>Tell us about your rockwork. Pricing depends on the job site, so every quote is custom.</p>
           <div class="dev-note">Development mode: the phone number and email on this site are placeholders.</div>
-          <form id="quote-form" action="mailto:quotes@example.com" method="post" enctype="text/plain">
+          <form id="quote-form" action="https://formsubmit.co/skbogaardt@gmail.com" method="post">
+            <input type="hidden" name="_subject" value="New quote request - Wasatch Faux Rock">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
             <div class="row">
               <div>
                 <label for="name">Name</label>
@@ -181,8 +184,9 @@
               <label for="details">Tell us about the job</label>
               <textarea id="details" name="details" required></textarea>
             </div>
-            <p class="note">After you send this, reply to the email with any photos of the rockwork. They help a lot.</p>
+            <p class="note">We'll reply by email. Have photos of the rockwork? Send them in your reply. They help a lot.</p>
             <div><button class="btn" type="submit">Send Quote Request</button></div>
+            <p id="quote-status" class="status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>

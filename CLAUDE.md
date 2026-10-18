@@ -15,7 +15,7 @@ Natural, neutral, professional, earth-toned. Colors are CSS variables at the top
 - Phone `(801) 555-0100` and email `quotes@example.com` are fake. They appear in `index.html` (footer and form `action`) and in `script.js` (`QUOTE_EMAIL`). Remove the "Development mode" notice in the quote section and the footer note when real details are in.
 - Gallery photos are dashed `.ph` placeholders in `index.html`. Put real photos in `images/` and replace each `.ph` div with an `<img>` with descriptive alt text.
 - The About section avoids credentials the business doesn't have yet (no licensed/insured/years claims). Only add credibility claims the owner confirms.
-- The quote form opens the visitor's email app (`mailto:`). Swap in a form service (e.g. Formspree) once there is a real email.
+- The quote form posts to FormSubmit (`formsubmit.co`) and is delivered to `skbogaardt@gmail.com` (set in `script.js` and the form `action`). The first submission from the live site sends a one-time activation email that must be clicked. If sending fails, the form falls back to opening the visitor's email app. The footer email `quotes@example.com` is still a placeholder.
 
 ## Deployment
 
